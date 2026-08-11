@@ -1,643 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TCC OpenTech Academy</title>
-    <style>
-        /* Base Styles & Responsiveness */
-        :root {
-            --primary-color: #E74C3C;
-            --dark-bg: #E74C3C;
-            --light-bg: #f9f9f9;
-            --text-color: #333;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: var(--text-color);
-        }
-        /* Header & Navigation */
-        header {
-            background: var(--primary-color);
-            color: #fff;
-            padding: 1.5rem 1rem;
-            position: relative;
-            text-align: center;
-        }
-        .logo img {
-            max-height: 50px;
-        }
-        .slogan {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin: 0;
-        }
-        .lang-switch {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: #fff;
-            color: var(--primary-color);
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-        nav {
-            background: var(--dark-bg);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        nav ul li {
-            position: relative;
-        }
-        nav ul li a {
-            display: block;
-            color: #fff;
-            text-decoration: none;
-            padding: 1rem 1.5rem;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        nav ul li a:hover {
-            background: var(--primary-color);
-        }
-        /* Dropdown menus */
-        nav ul li ul {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: var(--dark-bg);
-            min-width: 250px;
-            flex-direction: column;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        nav ul li:hover ul {
-            display: flex;
-        }
-        nav ul li ul li a {
-            padding: 0.8rem 1.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9rem;
-        }
-        /* Layout */
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 2rem;
-        }
-        section {
-            padding: 3rem 0;
-            border-bottom: 1px solid #eee;
-        }
-        h1, h2, h3 {
-            color: var(--primary-color);
-        }
-        .hero {
-            background: var(--light-bg);
-            padding: 4rem 2rem;
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-top: 0;
-        }
-        .btn {
-            display: inline-block;
-            background: var(--primary-color);
-            color: #fff;
-            padding: 0.75rem 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 0.5rem;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        .btn:hover {
-            background: #c0392b;
-        }
-        /* Tables */
-        .table-responsive {
-            overflow-x: auto;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            background: #fff;
-        }
-        th, td {
-            padding: 1rem;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-        th {
-            background: var(--light-bg);
-            color: var(--primary-color);
-        }
-        footer {
-            background: var(--dark-bg);
-            color: #fff;
-            text-align: center;
-            padding: 2rem 1rem;
-        }
-        /* Language Toggle Classes */
-        .lang-zh {
-            display: none;
-        }
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .lang-switch {
-                position: static;
-                display: block;
-                margin: 10px auto;
-            }
-            nav ul {
-                flex-direction: column;
-            }
-            nav ul li ul {
-                position: static;
-                display: none;
-            }
-            nav ul li:active ul, nav ul li:focus-within ul {
-                display: flex;
-            }
-        }
-    </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TCC OpenTech Academy | Upskill Smarter</title>
+    <meta
+      name="description"
+      content="TCC OpenTech Academy provides official vendor training, CEF approved courses, Kubernetes training, and enterprise upskilling with government subsidy support."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="#home" data-route="home" class="brand" aria-label="TCC OpenTech Academy home">
+          <span class="brand-mark"><img src="Final Logo.png" alt="TCC OpenTech Academy logo" /></span>
+          <span class="brand-text">OpenTech Academy</span>
+        </a>
 
-    <!-- Header -->
-    <header>
-        <button class="lang-switch" onclick="toggleLanguage()">English / 中文</button>
-		<p class="slogan">
-        
-            
-                <span class="lang-en">Upskill Smarter, Learn Faster, Get Certified with Government Subsidy Support</span>
-                <span class="lang-zh">聰明升級，快速學習，考取認證，並獲得政府資助支持</span>
-            </p>
-        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#home" data-route="home" class="active">Home</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropbtn" type="button">Individual Upskilling</button>
+            <div class="dropdown-menu">
+              <a href="#courses" data-route="courses">Official Vendor Courses</a>
+              <a href="#courses-short" data-route="courses-short" style="display: none;">Short Crash Courses</a>
+              <a href="#courses-exams" data-route="courses-exams">Certificate Exams</a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button class="nav-dropbtn" type="button">Enterprise Solutions</button>
+            <div class="dropdown-menu">
+              <a href="#enterprise-custom" data-route="enterprise-custom">Corporate Custom Training</a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button class="nav-dropbtn" type="button">Resources &amp; Events</button>
+            <div class="dropdown-menu">
+              <a href="#resources-events" data-route="resources-events">Resources &amp; Events</a>
+              <a href="#kube-friday" data-route="kube-friday">Kube-Friday Live Events</a>
+              <a href="#funding-guide" data-route="funding-guide">Funding Guide Hub</a>
+            </div>
+          </div>
+          <a href="#about-us" data-route="about-us">About Us</a>
+        </nav>
+
+      </div>
     </header>
 
-    <!-- Navigation -->
-    <nav>
-        <ul>
-			<li>
-			<div class="logo">
-            <!-- Provided Base64 Logo -->
-            <img src="data:image/png;base64,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" alt="TCC OpenTech Academy Logo">
-			</li>
-            <li>
-                <a href="#home">
-                    <span class="lang-en">Home</span>
-                    <span class="lang-zh">首頁</span>
-                </a>
-            </li>
-            <li>
-                <a href="#upskilling">
-                    <span class="lang-en">Individual Upskilling</span>
-                    <span class="lang-zh">個人技能升級</span>
-                </a>
-                <ul>
-                    <li><a href="#vendor-courses">
-                        <span class="lang-en">Official Vendor Courses</span>
-                        <span class="lang-zh">官方原廠課程</span>
-                    </a></li>
-                    <li><a href="#cef-courses">
-                        <span class="lang-en">CEF Subsidy Courses</span>
-                        <span class="lang-zh">CEF 持續進修基金課程</span>
-                    </a></li>
-                    <li><a href="#short-courses">
-                        <span class="lang-en">Short Crash Courses</span>
-                        <span class="lang-zh">短期速成課程</span>
-                    </a></li>
-                    <li><a href="#exams">
-                        <span class="lang-en">Certificate Exams</span>
-                        <span class="lang-zh">認證考試</span>
-                    </a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#enterprise">
-                    <span class="lang-en">Enterprise Solutions</span>
-                    <span class="lang-zh">企業解決方案</span>
-                </a>
-                <ul>
-                    <li><a href="#nittp-courses">
-                        <span class="lang-en">NITTP Enterprise Tech Training</span>
-                        <span class="lang-zh">NITTP 企業科技訓練</span>
-                    </a></li>
-                    <li><a href="#enterprise">
-                        <span class="lang-en">Corporate Custom Training</span>
-                        <span class="lang-zh">企業定制培訓</span>
-                    </a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#resources">
-                    <span class="lang-en">Resources & Events</span>
-                    <span class="lang-zh">資源與活動</span>
-                </a>
-                <ul>
-                    <li><a href="#kube-friday">
-                        <span class="lang-en">Kube-Friday Live Events</span>
-                        <span class="lang-zh">Kube-Friday 直播活動</span>
-                    </a></li>
-                    <li><a href="#funding-hub">
-                        <span class="lang-en">Funding Guide Hub</span>
-                        <span class="lang-zh">資助指南中心</span>
-                    </a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#footer">
-                    <span class="lang-en">About Us</span>
-                    <span class="lang-zh">關於我們</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- Main Content Container -->
-    <div class="container">
-
-        <!-- Section 1: Homepage -->
-        <section id="home">
-            <div class="hero">
-                <h1>
-                    <span class="lang-en">Level Up Your Cloud, Kubernetes & Industrial Tech Skills | 100% Government Subsidy Eligible Training</span>
-                    <span class="lang-zh">提升您的雲端、Kubernetes及工業科技技能 | 100% 符合政府資助資格的培訓</span>
-                </h1>
-                <p>
-                    <span class="lang-en">Stop self-learning blindly. Learn from certified industry instructors, access official vendor training, and <strong>save up to HK$25,000 personal subsidy / HK$250,000 corporate annual funding</strong> on every eligible course. Whether you are an individual upgrading your career or an enterprise building a tech team, we deliver practical, exam-oriented, industry-recognized tech training for Hong Kong professionals.</span>
-                    <span class="lang-zh">拒絕盲目自學。跟隨獲得認證的行業導師學習，獲取官方原廠培訓，並在每個符合資格的課程上<strong>節省高達 HK$25,000 的個人資助 / HK$250,000 的企業年度資助</strong>。無論您是尋求職業升級的個人，還是建立科技團隊的企業，我們都為香港專業人士提供實用、以考試為導向且受業界認可的科技培訓。</span>
-                </p>
-                <div>
-                    <a href="#vendor-courses" class="btn">
-                        <span class="lang-en">Browse All Courses</span>
-                        <span class="lang-zh">瀏覽所有課程</span>
-                    </a>
-                    <a href="#funding-hub" class="btn">
-                        <span class="lang-en">Check Subsidy Eligibility</span>
-                        <span class="lang-zh">檢查資助資格</span>
-                    </a>
-                    <a href="#kube-friday" class="btn">
-                        <span class="lang-en">Join Free Kube-Friday</span>
-                        <span class="lang-zh">免費參加 Kube-Friday</span>
-                    </a>
-                </div>
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Government Subsidy Eligible Training</span>
+            <h1>Level Up Your Cloud, Kubernetes &amp; Industrial Tech Skills</h1>
+            <p class="hero-text">
+              Learn from certified industry instructors, access official vendor training,
+              and save up to <strong>HK$25,000 personal subsidy</strong> /
+              <strong>HK$250,000 corporate annual funding</strong> on every eligible course.
+            </p>
+            <div class="cta-row">
+              <a href="#courses" data-route="courses" class="btn btn-primary">Browse All Courses</a>
+              <a href="#contact" class="btn btn-secondary">Check Subsidy Eligibility</a>
+              <a href="#kube-friday" data-route="kube-friday" class="btn btn-ghost">Join Free Kube-Friday</a>
             </div>
-
-            <h2>
-                <span class="lang-en">Why Choose TCC OpenTech Academy?</span>
-                <span class="lang-zh">為何選擇 TCC OpenTech Academy？</span>
-            </h2>
-            <ul>
-                <li>
-                    <span class="lang-en"><strong>Authorized Official Resources:</strong> Vendor-certified courses + professional instructor team</span>
-                    <span class="lang-zh"><strong>授權官方資源：</strong> 原廠認證課程 + 專業導師團隊</span>
-                </li>
-                <li>
-                    <span class="lang-en"><strong>Dual Subsidy Coverage:</strong> Personal CEF + Corporate NITTP double funding support</span>
-                    <span class="lang-zh"><strong>雙重資助覆蓋：</strong> 個人 CEF + 企業 NITTP 雙重資金支持</span>
-                </li>
-                <li>
-                    <span class="lang-en"><strong>Practical Teaching Orientation:</strong> Focus on real workplace application, not rigid theoretical indoctrination</span>
-                    <span class="lang-zh"><strong>實戰教學導向：</strong> 專注於真實職場應用，而非死板的理論灌輸</span>
-                </li>
-                <li>
-                    <span class="lang-en"><strong>Full Lifecycle Service:</strong> Learning + revision + exam certification + subsidy application guidance</span>
-                    <span class="lang-zh"><strong>全生命週期服務：</strong> 學習 + 複習 + 考試認證 + 資助申請指導</span>
-                </li>
+            <ul class="mini-stats" aria-label="Key academy metrics">
+              <li><strong>100%</strong><span>CEF eligible</span></li>
+              <li><strong>Weekly</strong><span>Kube-Friday</span></li>
+              <li><strong>Official</strong><span>Red Hat &amp; CNCF</span></li>
             </ul>
-        </section>
+          </div>
 
-        <!-- Section 2: Kube-Friday -->
-        <section id="kube-friday">
-            <h2>
-                <span class="lang-en">Kube-Friday | Free Weekly Cloud & Kubernetes Live Sharing Session</span>
-                <span class="lang-zh">Kube-Friday | 每週五晚間免費雲端與 Kubernetes 直播分享會</span>
-            </h2>
-            <p>
-                <span class="lang-en"><strong>Learn Cloud Native & Kubernetes Tech Every Friday Night – Casual, Practical, Zero Cost, Zero Pressure</strong><br>
-                Every Friday night from 8:30 PM to 9:30 PM HKT, our senior industry instructors host a <strong>60-minute relaxed live online session</strong> via web conferencing tools. Different from formal structured courses, Kube-Friday focuses on <strong>light-weight introduction, practical skill sharing, real industry pain points and interactive Q&A</strong>.</span>
-                <span class="lang-zh"><strong>每週五晚間學習雲原生與 Kubernetes 科技 – 輕鬆、實用、零成本、零壓力</strong><br>
-                香港時間每週五晚 8:30 至 9:30，我們的資深行業導師將透過網路會議工具主持<strong>60分鐘的輕鬆線上直播分享</strong>。有別於傳統正式課程，Kube-Friday 專注於<strong>輕量級入門、實用技能分享、真實行業痛點及互動問答</strong>。</span>
-            </p>
-            
-            <h3>
-                <span class="lang-en">Upcoming Event Schedule</span>
-                <span class="lang-zh">近期活動時間表</span>
-            </h3>
-            <div class="table-responsive">
-                <table>
-                    <tr>
-                        <th><span class="lang-en">Date</span><span class="lang-zh">日期</span></th>
-                        <th><span class="lang-en">Topic</span><span class="lang-zh">主題</span></th>
-                    </tr>
-                    <tr>
-                        <td><span class="lang-en">2 Oct 2026</span><span class="lang-zh">2026年10月2日</span></td>
-                        <td><span class="lang-en">What is K8s</span><span class="lang-zh">什麼是 K8s</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="lang-en">9 Oct 2026</span><span class="lang-zh">2026年10月9日</span></td>
-                        <td><span class="lang-en">What is Control Plane</span><span class="lang-zh">什麼是 Control Plane</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="lang-en">16 Oct 2026</span><span class="lang-zh">2026年10月16日</span></td>
-                        <td><span class="lang-en">What is CRI</span><span class="lang-zh">什麼是 CRI</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="lang-en">23 Oct 2026</span><span class="lang-zh">2026年10月23日</span></td>
-                        <td><span class="lang-en">What is kubelet</span><span class="lang-zh">什麼是 kubelet</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="lang-en">30 Oct 2026</span><span class="lang-zh">2026年10月30日</span></td>
-                        <td><span class="lang-en">What is CNI</span><span class="lang-zh">什麼是 CNI</span></td>
-                    </tr>
-                </table>
+          <div class="hero-panel">
+            <div class="floating-card">
+              <p class="panel-label">This Week at TCC</p>
+              <h3>Cloud Native Essentials</h3>
+              <ul>
+                <li>Official vendor-aligned curriculum</li>
+                <li>Hands-on labs and practitioner insight</li>
+                <li>CEF and NITTP funding guidance</li>
+              </ul>
+              <div class="panel-meta">
+                <span>Next intake: 12 Oct</span>
+                <span class="pill">Limited Seats</span>
+              </div>
             </div>
-            <a href="#" class="btn">
-                <span class="lang-en">Reserve My Free Seat Now</span>
-                <span class="lang-zh">立即預留免費名額</span>
-            </a>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- Section 3: Official Vendor Courses -->
-        <section id="vendor-courses">
-            <h2>
-                <span class="lang-en">Official Vendor Certified Courses | Authorized Red Hat & CNCF Professional Training</span>
-                <span class="lang-zh">官方原廠認證課程 | 授權 Red Hat 及 CNCF 專業培訓</span>
-            </h2>
+      <section class="feature-band">
+        <div class="container feature-grid">
+          <article>
+            <span class="feature-icon">✓</span>
+            <h3>Authorized Official Resources</h3>
+            <p>Vendor-certified courses with professional teaching guidance.</p>
+          </article>
+          <article>
+            <span class="feature-icon">$</span>
+            <h3>Dual Subsidy Coverage</h3>
+            <p>Personal CEF plus corporate NITTP funding support.</p>
+          </article>
+          <article>
+            <span class="feature-icon">⚡</span>
+            <h3>Practical Learning</h3>
+            <p>Real workplace skills, not rigid classroom theory alone.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section intro-section">
+        <div class="container section-head">
+          <span class="eyebrow">Upcoming Kube-Friday</span>
+          <h2>Free weekly tech sharing for curious minds and professionals</h2>
+        </div>
+        <div class="container event-panel">
+          <div>
             <p>
-                <span class="lang-en">In the cloud native and enterprise IT industry, <strong>official vendor authorized training is the most gold-standard learning channel</strong>. TCC OpenTech Academy provides fully authorized official courses from top international tech vendors, including <strong>Official Red Hat Courses and Official CNCF Cloud Native Courses</strong>.</span>
-                <span class="lang-zh">在雲原生及企業 IT 行業中，<strong>官方原廠授權培訓是最具含金量的學習管道</strong>。TCC OpenTech Academy 提供來自國際頂尖科技原廠的全面授權官方課程，包括<strong>官方 Red Hat 課程與官方 CNCF 雲原生課程</strong>。</span>
+              Miss expensive seminars and boring pre-recorded courses? Join our weekly
+              1-hour live webinar every Friday night and explore Kubernetes, cloud-native,
+              and DevOps concepts in a casual, practical way.
             </p>
-            
-            <div class="table-responsive">
-                <table>
-                    <tr>
-                        <th><span class="lang-en">Course</span><span class="lang-zh">課程</span></th>
-                        <th><span class="lang-en">Name</span><span class="lang-zh">名稱</span></th>
-                        <th><span class="lang-en">Vendor</span><span class="lang-zh">原廠</span></th>
-                        <th><span class="lang-en">Applicable Cert</span><span class="lang-zh">對應認證</span></th>
-                    </tr>
-                    <tr>
-                        <td><span class="lang-en">Red Hat DO180</span><span class="lang-zh">Red Hat DO180</span></td>
-                        <td><span class="lang-en">Red Hat OpenShift Administration I: Operating a Production Cluster</span><span class="lang-zh">Red Hat OpenShift 管理 I：運行生產叢集</span></td>
-                        <td><span class="lang-en">Red Hat</span><span class="lang-zh">Red Hat</span></td>
-                        <td><span class="lang-en">Red Hat Certified OpenShift Administrator</span><span class="lang-zh">Red Hat Certified OpenShift Administrator</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="lang-en">Red Hat DO280</span><span class="lang-zh">Red Hat DO180</span></td>
-                        <td><span class="lang-en">Red Hat OpenShift Administration II: Configuring a Production Cluster</span><span class="lang-zh">Red Hat OpenShift 管理 II：運行生產叢集</span></td>
-                        <td><span class="lang-en">Red Hat</span><span class="lang-zh">Red Hat</span></td>
-                        <td><span class="lang-en">Red Hat Certified OpenShift Administrator</span><span class="lang-zh">Red Hat Certified OpenShift Administrator</span></td>
-                    </tr>		
-                    <tr>
-                        <td><span class="lang-en">Red Hat DO188</span><span class="lang-zh">Red Hat DO188</span></td>
-                        <td><span class="lang-en">Red Hat OpenShift Development I: Introduction to Containers with Podman</span><span class="lang-zh">Red Hat OpenShift 開發 I：Podman 容器入門</span></td>
-                        <td><span class="lang-en">Red Hat</span><span class="lang-zh">Red Hat</span></td>
-                        <td><span class="lang-en">Red Hat Certified OpenShift Application Developer</span><span class="lang-zh">Red Hat Certified OpenShift Application Developer</span></td>
-                    </tr>	
-                    <tr>
-                        <td><span class="lang-en">Red Hat DO288</span><span class="lang-zh">Red Hat DO288</span></td>
-                        <td><span class="lang-en">Red Hat OpenShift Developer II: Building and Deploying Cloud-native </span><span class="lang-zh">Red Hat OpenShift 開發人員 II：建置與部署雲端原生應用</span></td>
-                        <td><span class="lang-en">Red Hat</span><span class="lang-zh">Red Hat</span></td>
-                        <td><span class="lang-en">Red Hat Certified OpenShift Application Developer</span><span class="lang-zh">Red Hat Certified OpenShift Application Developer</span></td>
-                    </tr>	
-                    <tr>
-                        <td><span class="lang-en">Red Hat AU294</span><span class="lang-zh">Red Hat AU294</span></td>
-                        <td><span class="lang-en">Red Hat Enterprise Linux Automation with Ansible </span><span class="lang-zh">使用 Ansible 實現 Red Hat Enterprise Linux 自動化</span></td>
-                        <td><span class="lang-en">Red Hat</span><span class="lang-zh">Red Hat</span></td>
-                        <td><span class="lang-en">Red Hat Certified Engineer (RHCE)</span><span class="lang-zh">Red Hat Certified Engineer (RHCE)</span></td>
-                    </tr>		
-                    <tr>
-                        <td><span class="lang-en">Red Hat RH199</span><span class="lang-zh">Red Hat RH199</span></td>
-                        <td><span class="lang-en">Red Hat Certified System Administrator Rapid Track course </span><span class="lang-zh">紅帽認證系統管理員快速通道課程</span></td>
-                        <td><span class="lang-en">Red Hat</span><span class="lang-zh">Red Hat</span></td>
-                        <td><span class="lang-en">Red Hat Certified Engineer (RHCE)</span><span class="lang-zh">Red Hat Certified Engineer (RHCE)</span></td>
-                    </tr>						
-                    <tr>
-                        <td><span class="lang-en">Linux Foundation LF458</span><span class="lang-zh">Linux Foundation LF458</span></td>
-                        <td><span class="lang-en">Kubernetes Administration (LFS458)</span><span class="lang-zh">Kubernetes 管理 (LFS458)</span></td>
-                        <td><span class="lang-en">Linux Foundation (CNCF)</span><span class="lang-zh">Linux Foundation (CNCF)</span></td>
-                        <td><span class="lang-en">Certified Kubernetes Administrator (CKA)</span><span class="lang-zh">認證 Kubernetes 管理員 (CKA)</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="lang-en">Linux Foundation LF459</span><span class="lang-zh">Linux Foundation LF459</span></td>
-                        <td><span class="lang-en">Kubernetes for App Developers (LFS459)</span><span class="lang-zh">Kubernetes for App Developers (LFS459)</span></td>
-                        <td><span class="lang-en">Linux Foundation (CNCF)</span><span class="lang-zh">Linux Foundation (CNCF)</span></td>
-                        <td><span class="lang-en">Certified Kubernetes Application Developer (CKAD) </span><span class="lang-zh">認證 Kubernetes 應用程式開發者 (CKAD)</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="lang-en">Linux Foundation LF460</span><span class="lang-zh">Linux Foundation LF460</span></td>
-                        <td><span class="lang-en">Kubernetes Security Fundamentals (LF460)</span><span class="lang-zh">Kubernetes 安全基礎 (LF460)</span></td>
-                        <td><span class="lang-en">Linux Foundation (CNCF)</span><span class="lang-zh">Linux Foundation (CNCF)</span></td>
-                        <td><span class="lang-en">Certified Kubernetes Security Specialist (CKS) </span><span class="lang-zh">認證 Kubernetes 安全專家 (CKS)</span></td>
-                    </tr>
-                </table>
+            <a href="#kube-friday" data-route="kube-friday" class="btn btn-primary">Reserve My Free Seat Now</a>
+          </div>
+          <div class="event-details">
+            <div><strong>When</strong><span>Friday • 8:30 PM – 9:30 PM HKT</span></div>
+            <div><strong>Format</strong><span>Live online webinar</span></div>
+            <div><strong>Best for</strong><span>Beginners to practitioners</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt-section">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Our Core Training Categories</span>
+            <h2>Complete learning support from first steps to certification</h2>
+          </div>
+
+          <div class="card-grid categories-grid">
+            <article class="info-card">
+              <h3>Official Vendor Courses</h3>
+              <p>Authorized Red Hat and CNCF training aligned to international certification standards.</p>
+            </article>
+            <article class="info-card">
+              <h3>CEF Approved Courses</h3>
+              <p>100% refundable eligible courses supporting personal lifelong learning.</p>
+            </article>
+            <article class="info-card">
+              <h3>NITTP Enterprise Training</h3>
+              <p>Government matching funds to help enterprises reduce training costs.</p>
+            </article>
+            <article class="info-card">
+              <h3>Short 1-Day Courses</h3>
+              <p>Intensive crash courses for exam sprints and rapid upskilling.</p>
+            </article>
+            <article class="info-card">
+              <h3>Official Certificate Exams</h3>
+              <p>One-stop exam booking, voucher support, and streamlined certification guidance.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section funding-section">
+        <div class="container funding-wrap">
+          <div>
+            <span class="eyebrow">Government Funding Advantage</span>
+            <h2>Maximize legal, transparent, and efficient subsidy support</h2>
+            <p>
+              As a registered training provider for both Hong Kong CEF and NITTP,
+              we help every learner and enterprise access funding correctly and confidently.
+            </p>
+          </div>
+          <div class="funding-list">
+            <div>
+              <strong>CEF</strong>
+              <span>Personal lifelong learning subsidies</span>
             </div>
-        </section>
-
-        <!-- Section 4: CEF Courses -->
-        <section id="cef-courses">
-            <h2>
-                <span class="lang-en">CEF Approved Courses | Hong Kong Continuing Education Fund Reimbursable Training</span>
-                <span class="lang-zh">CEF 認可課程 | 香港持續進修基金可發還款項培訓</span>
-            </h2>
-            <p>
-                <span class="lang-en">Each eligible individual enjoys a <strong>maximum personal subsidy ceiling of HK$25,000</strong>. You can flexibly use the quota for multiple eligible courses, greatly reducing the cost of personal skill upgrading and certification learning.</span>
-                <span class="lang-zh">每位合資格人士可享有<strong>最高 HK$25,000 的個人資助上限</strong>。您可以靈活地將名額用於多個合資格課程，大幅降低個人技能提升與考取認證的成本。</span>
-            </p>
-            <ul>
-                <li><span class="lang-en"><strong>CEF-K8S-Boot-Camp:</strong> Kubernetes Boot Camp (Cert: CKA)</span><span class="lang-zh"><strong>CEF-K8S-Boot-Camp:</strong> Kubernetes 特訓營 (認證: CKA)</span></li>
-                <li><span class="lang-en"><strong>CEF-OCP-Boot-Camp:</strong> OpenShift Boot Camp (Cert: Red Hat Certified OpenShift Administrator)</span><span class="lang-zh"><strong>CEF-OCP-Boot-Camp:</strong> OpenShift 特訓營 (認證: Red Hat 認證 OpenShift 管理員)</span></li>
-                <li><span class="lang-en"><strong>CEF-AI-Boot-Camp:</strong> AI Boot Camp (Cert: Certified AI Professional CAP)</span><span class="lang-zh"><strong>CEF-AI-Boot-Camp:</strong> AI 特訓營 (認證: 認證 AI 專家 CAP)</span></li>
-				<li><span class="lang-en"><strong>CEF-Linux-Boot-Camp:</strong> Linux Boot Camp (Red Hat Certified Engineer - RHCE )</span><span class="lang-zh"><strong>CEF-Linux-Boot-Camp:</strong> Linux 特訓營 (認證: Red Hat Certified Engineer - RHCE )</span></li>
-            </ul>
-        </section>
-
-        <!-- Section 5: NITTP Courses -->
-        <section id="nittp-courses">
-            <h2>
-                <span class="lang-en">NITTP Enterprise Training Courses | New Industrialisation & Technology Training Subsidy Programme</span>
-                <span class="lang-zh">NITTP 企業培訓課程 | 新型工業化及科技培訓資助計劃</span>
-            </h2>
-            <p>
-                <span class="lang-en">Adopting a 1:1 government-enterprise matching funding model, the programme effectively <strong>cuts enterprise tech team training costs by half</strong>, with a maximum HK$250,000 subsidy per enterprise per financial year.</span>
-                <span class="lang-zh">計劃採用 1:1 政府與企業配對資助模式，有效<strong>將企業科技團隊培訓成本減半</strong>，每家企業每財政年度最高可獲 HK$250,000 資助。</span>
-            </p>
-            <ul>
-                <li><span class="lang-en"><strong>NITTP-K8S-Boot-Camp:</strong> Kubernetes Boot Camp (Cert: CKA)</span><span class="lang-zh"><strong>NITTP-K8S-Boot-Camp:</strong> Kubernetes 特訓營 (認證: CKA)</span></li>
-                <li><span class="lang-en"><strong>NITTP-OCP-Boot-Camp:</strong> OpenShift Boot Camp (Cert: Red Hat Certified OpenShift Administrator)</span><span class="lang-zh"><strong>NITTP-OCP-Boot-Camp:</strong> OpenShift 特訓營 (認證: Red Hat 認證 OpenShift 管理員)</span></li>
-				<li><span class="lang-en"><strong>NITTP-AI-Boot-Camp:</strong> AI Boot Camp (Cert: Certified AI Professional CAP)</span><span class="lang-zh"><strong>NITTP-AI-Boot-Camp:</strong> AI 特訓營 (認證: 認證 AI 專家 CAP)</span></li>
-				<li><span class="lang-en"><strong>NITTP-Linux-Boot-Camp:</strong> Linux Boot Camp (Red Hat Certified Engineer - RHCE )</span><span class="lang-zh"><strong>NITTP-Linux-Boot-Camp:</strong> Linux 特訓營 (認證: Red Hat Certified Engineer - RHCE )</span></li>
-            </ul>
-        </section>
-		<!-- Section 9: Enterprise Courses -->
-        <section id="enterprise">
-            <h2>
-                <span class="lang-en">Corporate Custom Training</span>
-                <span class="lang-zh">企業定制培訓</span>
-            </h2>
-			<p>
-			<span class="lang-en">Upgrade Your Tech Team’s Edge with Custom Corporate IT Training! 🚀Generic courses don't solve specific infrastructure problems. Your engineering team deserves tailored, high-impact upskilling designed for your unique tech stack and business objectives. </span>
-			<span class="lang-zh">透過客製化企業 IT 培訓，提升您技術團隊的競爭優勢！ 🚀 通用課程無法解決特定的基礎設施難題。您的工程團隊理應獲得量身訂製、成效顯著的技能提升方案，以契合您獨特的技術堆疊與業務目標。</span>
-			</p>
-			
-			<h3>
-                <span class="lang-en">Why Partner With Us?</span>
-                <span class="lang-zh">為何與我們合作？</span>
-            </h3>
-			<ul>
-                <li>
-				<span class="lang-en"><strong>Tailored Curriculum:</strong> We build modules around your exact software, cloud environment, and workflows.</span>
-				<span class="lang-zh"><strong>量身訂製的課程：</strong> 我們圍繞您實際使用的軟體、雲端環境和工作流程來建立課程模組。</span>
-				</li>
-                <li>
-				<span class="lang-en"><strong>Expert Instructors:</strong> Learn directly from active, industry-certified IT veterans and consultants.</span>
-				<span class="lang-zh"><strong>專家級講師：</strong> 直接向活躍於業界的、獲業界認證的 IT 資深人士與顧問學習。</span>
-				</li>
-				<li>
-				<span class="lang-en"><strong>Hands-On Labs:</strong> Sandbox environments ensure immediate, real-world skill application.</span>
-				<span class="lang-zh"><strong>動手實驗：</strong> 沙箱環境確保了技能在實際場景中的即時應用。</span>
-				</li>
-				<li>
-				<span class="lang-en"><strong>Flexible Delivery:</strong> Choose between live virtual sessions or interactive on-site bootcamps.</span>
-				<span class="lang-zh"><strong>靈活的交付方式：</strong> 可選擇即時線上課程或互動式線下訓練營。</span>
-				</li>
-            </ul>
-			<h3>
-                <span class="lang-en">Core Specialized Tracks</span>
-                <span class="lang-zh">核心專業方向</span>
-            </h3>
-			<ul>
-                <li>
-				<span class="lang-en"><strong>Cloud & DevOps:</strong> AWS, Azure, CI/CD pipelines, Kubernetes, and Infrastructure as Code.</span>
-				<span class="lang-zh"><strong>雲端與 DevOps：</strong> AWS、Azure、CI/CD 管線、Kubernetes 和基礎架構即代碼 (IaC)。</span>
-				</li>
-                <li>
-				<span class="lang-en"><strong>Cybersecurity:</strong> Advanced threat detection, zero-trust architecture, and compliance frameworks.</span>
-				<span class="lang-zh"><strong>網路安全：</strong> 進階威脅偵測、零信任架構及合規框架。</span>
-				</li>
-				<li>
-				<span class="lang-en"><strong>Data & AI:</strong> Enterprise data engineering, pipeline automation, and LLM integration.</span>
-				<span class="lang-zh"><strong>資料與人工智慧：</strong> 企業級資料工程、管線自動化及大語言模型（LLM）整合。</span>
-				</li>
-				<li>
-				<span class="lang-en"><strong>Full-Stack Scaling:</strong> Microservices optimization, legacy modernization, and system design.</span>
-				<span class="lang-zh"><strong>全端擴充：</strong> 微服務最佳化、遺留系統現代化與系統設計。</span>
-				</li>
-            </ul>
-		</section>
-		
-        <!-- Section 6: Short Courses -->
-        <section id="short-courses">
-            <h2>
-                <span class="lang-en">1-Day Short Crash Courses | Intensive Exam Prep & Tech Interest Training</span>
-                <span class="lang-zh">1天短期速成課程 | 考試衝刺與技術興趣培訓</span>
-            </h2>
-            <p>
-                <span class="lang-en">Our <strong>short courses with a maximum duration of 1 single day</strong> are designed for busy workplace professionals and quick skill upgrade learners.</span>
-                <span class="lang-zh">我們的<strong>最長為1天的短期課程</strong>，專為忙碌的職場專業人士和需要快速提升技能的學習者設計。</span>
-            </p>
-            <div class="table-responsive">
-                <table>
-                    <tr>
-                        <th><span class="lang-en">Course</span><span class="lang-zh">課程</span></th>
-                        <th><span class="lang-en">Details</span><span class="lang-zh">詳情</span></th>
-                    </tr>
-                    <tr>
-                        <td><span class="lang-en"><strong>CKA Exam Prep</strong><br>Kubernetes Exam Power UP</span><span class="lang-zh"><strong>CKA 考試準備</strong><br>Kubernetes 考試強化</span></td>
-                        <td><span class="lang-en"><strong>Price:</strong> HKD 5000 include exam coupon<br><strong>Note:</strong> A minimum of 16 students is required to run the class</span><span class="lang-zh"><strong>價格:</strong> HKD 5000 包含考試券<br><strong>備註:</strong> 最少需要16名學生開班</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="lang-en"><strong>EX280 Exam Prep</strong><br>OpenShift Administrator Exam Power UP</span><span class="lang-zh"><strong>EX280 考試準備</strong><br>OpenShift 管理員考試強化</span></td>
-                        <td><span class="lang-en"><strong>Price:</strong> HKD 5000 include exam coupon<br><strong>Note:</strong> A minimum of 16 students is required to run the class</span><span class="lang-zh"><strong>價格:</strong> HKD 5000 包含考試券<br><strong>備註:</strong> 最少需要16名學生開班</span></td>
-                    </tr>
-                </table>
+            <div>
+              <strong>NITTP</strong>
+              <span>Corporate annual training support</span>
             </div>
-        </section>
+            <div>
+              <strong>Transparent</strong>
+              <span>Clear guidance throughout the reimbursement process</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <!-- Section 7: Certificate Exams -->
-        <section id="exams">
-            <h2>
-                <span class="lang-en">Official Certificate Exams | One-Stop Exam Voucher Purchase & Registration</span>
-                <span class="lang-zh">官方認證考試 | 一站式考試券購買與報名</span>
-            </h2>
-            <p>
-                <span class="lang-en">To help learners complete the closed loop of <strong>learning - training - certification</strong>, TCC OpenTech Academy provides one-stop official certification exam booking and voucher purchase service.</span>
-                <span class="lang-zh">為了幫助學習者完成<strong>學習 - 培訓 - 認證</strong>的閉環，TCC OpenTech Academy 提供一站式官方認證考試預約與考試券購買服務。</span>
-            </p>
-        </section>
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Why Choose TCC OpenTech Academy?</span>
+            <h2>Built for real career upgrading and enterprise capability growth</h2>
+          </div>
+          <div class="card-grid reasons-grid">
+            <article class="quote-card">
+              <h3>Authorized Official Resources</h3>
+              <p>Vendor-certified programs and professional instructors with hands-on industry experience.</p>
+            </article>
+            <article class="quote-card">
+              <h3>Dual Subsidy Coverage</h3>
+              <p>Support for both individual and corporate funding paths with practical guidance.</p>
+            </article>
+            <article class="quote-card">
+              <h3>Practical Teaching</h3>
+              <p>Focused on real workplace application rather than abstract theory.</p>
+            </article>
+            <article class="quote-card">
+              <h3>Full Lifecycle Support</h3>
+              <p>Learning, revision, exam certification, and funding application assistance in one journey.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-        <!-- Section 8: Funding Support Hub -->
-        <section id="funding-hub">
-            <h2>
-                <span class="lang-en">CEF & NITTP Government Funding Guide | Maximize Your Training Subsidy</span>
-                <span class="lang-zh">CEF & NITTP 政府資助指南 | 最大化您的培訓資助</span>
-            </h2>
-            <p>
-                <span class="lang-en"><strong>Learn with zero or low cost! Master all Hong Kong official tech training subsidy rules in one stop.</strong><br>
-                We integrate <strong>CEF personal lifelong learning subsidy</strong> and <strong>NITTP enterprise tech training funding</strong> to create an exclusive subsidy guide hub, helping every individual and enterprise accurately judge eligibility, standardize application steps and fully utilize official policy benefits.</span>
-                <span class="lang-zh"><strong>零成本或低成本學習！一站式掌握香港所有官方科技培訓資助規則。</strong><br>
-                我們整合<strong> CEF 個人持續進修基金資助</strong>與<strong> NITTP 企業科技培訓資助</strong>，打造專屬資助指南中心，協助每個個人及企業準確判斷資格，規範申請步驟，並充分利用官方政策福利。</span>
-            </p>
-        </section>
-    </div>
+      <section class="section cta-section" id="contact">
+        <div class="container cta-banner">
+          <div>
+            <span class="eyebrow">Ready to start?</span>
+            <h2>Find the right course and maximize your funding support.</h2>
+          </div>
+          <div class="cta-actions">
+            <a href="#courses" data-route="courses" class="btn btn-primary">Explore Courses</a>
+            <a href="#kube-friday" data-route="kube-friday" class="btn btn-secondary">Reserve a Free Seat</a>
+          </div>
+        </div>
+      </section>
+    </main>
 
-    <!-- Footer -->
-    <footer id="footer">
-        <p>
-            <span class="lang-en"><strong>Empower Individual Career Upgrade, Boost Enterprise Tech Transformation with Professional Training & Official Government Subsidy Support</strong><br>
-            Provide long-term stable professional tech training, official certification services and one-stop subsidy application guidance for Hong Kong individuals and enterprises.</span>
-            <span class="lang-zh"><strong>透過專業培訓與官方政府資助支持，賦能個人職業升級，推動企業科技轉型</strong><br>
-            為香港個人與企業提供長期穩定的專業科技培訓、官方認證服務及一站式資助申請指導。</span>
-        </p>
-        <p>&copy; 2026 TCC OpenTech Academy</p>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="brand footer-brand">
+            <span class="brand-mark"><img src="Final Logo.png" alt="TCC OpenTech Academy logo" /></span>
+            <span class="brand-text">OpenTech Academy</span>
+          </div>
+          <p>Upskill smarter, learn faster, get certified with government subsidy support.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#courses" data-route="courses">Official Vendor Courses</a></li>
+            <li><a href="#kube-friday" data-route="kube-friday">Kube-Friday</a></li>
+            <li><a href="#funding-guide" data-route="funding-guide">Subsidy Eligibility</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:info@tccopentechacademy.com">info@tccopentechacademy.com</a></li>
+            <li><a href="tel:+85200000000">+852 0000 0000</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© <span id="year"></span> TCC OpenTech Academy</span>
+      </div>
     </footer>
 
-    <!-- JavaScript for Language Toggle -->
-    <script>
-        let isEnglish = true;
-        function toggleLanguage() {
-            isEnglish = !isEnglish;
-            const enElements = document.querySelectorAll('.lang-en');
-            const zhElements = document.querySelectorAll('.lang-zh');
-            
-            enElements.forEach(el => {
-                el.style.display = isEnglish ? 'inline' : 'none';
-            });
-            zhElements.forEach(el => {
-                el.style.display = isEnglish ? 'none' : 'inline';
-            });
-        }
-        
-        // Initial setup
-        document.addEventListener('DOMContentLoaded', () => {
-            const zhElements = document.querySelectorAll('.lang-zh');
-            zhElements.forEach(el => {
-                el.style.display = 'none';
-            });
-        });
-    </script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
