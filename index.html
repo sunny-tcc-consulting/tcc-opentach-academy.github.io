@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,7 +21,7 @@
       <div class="container nav-wrap">
         <a href="#home" data-route="home" class="brand" aria-label="TCC OpenTech Academy home">
           <span class="brand-mark"><img src="Final Logo.png" alt="TCC OpenTech Academy logo" /></span>
-          <span class="brand-text">OpenTech Academy</span>
+          <span class="brand-text" data-i18n="brand">OpenTech Academy</span>
         </a>
 
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -31,31 +31,37 @@
         </button>
 
         <nav class="main-nav" aria-label="Main navigation">
-          <a href="#home" data-route="home" class="active">Home</a>
+          <a href="#home" data-route="home" class="active" data-i18n="home">首頁</a>
           <div class="nav-dropdown">
-            <button class="nav-dropbtn" type="button">Individual Upskilling</button>
-            <div class="dropdown-menu">
-              <a href="#courses" data-route="courses">Official Vendor Courses</a>
-              <a href="#courses-short" data-route="courses-short" style="display: none;">Short Crash Courses</a>
-              <a href="#courses-exams" data-route="courses-exams">Certificate Exams</a>
+            <button class="nav-dropbtn" type="button" data-i18n="individualUpskilling">個人進修</button>
+            <div class="dropdown-menu" data-subsidy-menu="individual">
+              <a href="#courses" data-route="courses" data-i18n="officialVendorCourses">官方認證課程</a>
+              <a href="#courses-short" data-route="courses-short" class="subsidy-only" data-subsidy="short" data-i18n="shortCrashCourses">短期速成課程</a>
+              <a href="#courses-cef" data-route="courses-cef" class="subsidy-only" data-subsidy="cef" data-i18n="cefCourses">CEF 合資格課程</a>
+              <a href="#courses-exams" data-route="courses-exams" data-i18n="certificateExams">證照考試</a>
             </div>
           </div>
           <div class="nav-dropdown">
-            <button class="nav-dropbtn" type="button">Enterprise Solutions</button>
-            <div class="dropdown-menu">
-              <a href="#enterprise-custom" data-route="enterprise-custom">Corporate Custom Training</a>
+            <button class="nav-dropbtn" type="button" data-i18n="enterpriseSolutions">企業方案</button>
+            <div class="dropdown-menu" data-subsidy-menu="enterprise">
+              <a href="#enterprise-training" data-route="enterprise-training" class="subsidy-only" data-subsidy="nittp" data-i18n="nittpEnterprise">NITTP 企業培訓</a>
+              <a href="#enterprise-custom" data-route="enterprise-custom" data-i18n="corporateCustomTraining">企業客製培訓</a>
             </div>
           </div>
           <div class="nav-dropdown">
-            <button class="nav-dropbtn" type="button">Resources &amp; Events</button>
+            <button class="nav-dropbtn" type="button" data-i18n="resourcesEvents">資源與活動</button>
             <div class="dropdown-menu">
-              <a href="#resources-events" data-route="resources-events">Resources &amp; Events</a>
-              <a href="#kube-friday" data-route="kube-friday">Kube-Friday Live Events</a>
-              <a href="#funding-guide" data-route="funding-guide">Funding Guide Hub</a>
+              <a href="#resources-events" data-route="resources-events" data-i18n="resourcesEvents">資源與活動</a>
+              <a href="#kube-friday" data-route="kube-friday" data-i18n="kubeFridayLiveEvents">Kube-Friday 活動</a>
+              <a href="#funding-guide" data-route="funding-guide" data-i18n="fundingGuideHub">資助指南</a>
             </div>
           </div>
-          <a href="#about-us" data-route="about-us">About Us</a>
+          <a href="#about-us" data-route="about-us" data-i18n="aboutUs">關於我們</a>
         </nav>
+
+        <div class="nav-actions">
+          <button type="button" class="lang-switch" aria-label="切換至英文">EN</button>
+        </div>
 
       </div>
     </header>
@@ -64,37 +70,36 @@
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <span class="eyebrow">Government Subsidy Eligible Training</span>
-            <h1>Level Up Your Cloud, Kubernetes &amp; Industrial Tech Skills</h1>
+            <span class="eyebrow">政府資助培訓課程</span>
+            <h1>提升你的雲端、Kubernetes 與工業技術能力</h1>
             <p class="hero-text">
-              Learn from certified industry instructors, access official vendor training,
-              and save up to <strong>HK$25,000 personal subsidy</strong> /
-              <strong>HK$250,000 corporate annual funding</strong> on every eligible course.
+              與認證講師學習，接觸官方供應商培訓，並在每個合資格課程中節省最多
+              <strong>HK$25,000 個人資助</strong> / <strong>HK$250,000 企業年度資助</strong>。
             </p>
             <div class="cta-row">
-              <a href="#courses" data-route="courses" class="btn btn-primary">Browse All Courses</a>
-              <a href="#contact" class="btn btn-secondary">Check Subsidy Eligibility</a>
-              <a href="#kube-friday" data-route="kube-friday" class="btn btn-ghost">Join Free Kube-Friday</a>
+              <a href="#courses" data-route="courses" class="btn btn-primary" data-i18n="browseCourses">瀏覽所有課程</a>
+              <a href="#contact" class="btn btn-secondary" data-i18n="checkEligibility">查詢資助資格</a>
+              <a href="#kube-friday" data-route="kube-friday" class="btn btn-ghost" data-i18n="joinFreeKubeFriday">免費參加 Kube-Friday</a>
             </div>
             <ul class="mini-stats" aria-label="Key academy metrics">
-              <li><strong>100%</strong><span>CEF eligible</span></li>
-              <li><strong>Weekly</strong><span>Kube-Friday</span></li>
-              <li><strong>Official</strong><span>Red Hat &amp; CNCF</span></li>
+              <li><strong>100%</strong><span>CEF 合資格</span></li>
+              <li><strong>每週</strong><span>Kube-Friday</span></li>
+              <li><strong>官方</strong><span>Red Hat &amp; CNCF</span></li>
             </ul>
           </div>
 
           <div class="hero-panel">
             <div class="floating-card">
-              <p class="panel-label">This Week at TCC</p>
-              <h3>Cloud Native Essentials</h3>
+              <p class="panel-label">本週於 TCC</p>
+              <h3>雲端原生基礎課程</h3>
               <ul>
-                <li>Official vendor-aligned curriculum</li>
-                <li>Hands-on labs and practitioner insight</li>
-                <li>CEF and NITTP funding guidance</li>
+                <li>官方供應商對齊課程大綱</li>
+                <li>實作練習與從業者經驗分享</li>
+                <li>CEF 與 NITTP 資助指南</li>
               </ul>
               <div class="panel-meta">
-                <span>Next intake: 12 Oct</span>
-                <span class="pill">Limited Seats</span>
+                <span>下一批開課：10 月 12 日</span>
+                <span class="pill">名額有限</span>
               </div>
             </div>
           </div>
@@ -105,40 +110,39 @@
         <div class="container feature-grid">
           <article>
             <span class="feature-icon">✓</span>
-            <h3>Authorized Official Resources</h3>
-            <p>Vendor-certified courses with professional teaching guidance.</p>
+            <h3>官方授權資源</h3>
+            <p>供應商認證課程，配合專業教學指導。</p>
           </article>
           <article>
             <span class="feature-icon">$</span>
-            <h3>Dual Subsidy Coverage</h3>
-            <p>Personal CEF plus corporate NITTP funding support.</p>
+            <h3>雙重資助支持</h3>
+            <p>個人 CEF 與企業 NITTP 資助規劃支持。</p>
           </article>
           <article>
             <span class="feature-icon">⚡</span>
-            <h3>Practical Learning</h3>
-            <p>Real workplace skills, not rigid classroom theory alone.</p>
+            <h3>實務導向學習</h3>
+            <p>培養真實工作場景所需技能，而非單純理論。</p>
           </article>
         </div>
       </section>
 
       <section class="section intro-section">
         <div class="container section-head">
-          <span class="eyebrow">Upcoming Kube-Friday</span>
-          <h2>Free weekly tech sharing for curious minds and professionals</h2>
+          <span class="eyebrow">即將舉行的 Kube-Friday</span>
+          <h2>每週為好奇心與專業人士提供的免費技術分享</h2>
         </div>
         <div class="container event-panel">
           <div>
             <p>
-              Miss expensive seminars and boring pre-recorded courses? Join our weekly
-              1-hour live webinar every Friday night and explore Kubernetes, cloud-native,
-              and DevOps concepts in a casual, practical way.
+              還在參加昂貴、冗長且枯燥的研討會嗎？每週一晚，加入我們一小時的現場直播，透過實用方式探索
+              Kubernetes、雲端原生與 DevOps 概念。
             </p>
-            <a href="#kube-friday" data-route="kube-friday" class="btn btn-primary">Reserve My Free Seat Now</a>
+            <a href="#kube-friday" data-route="kube-friday" class="btn btn-primary">立即預留免費席位</a>
           </div>
           <div class="event-details">
-            <div><strong>When</strong><span>Friday • 8:30 PM – 9:30 PM HKT</span></div>
-            <div><strong>Format</strong><span>Live online webinar</span></div>
-            <div><strong>Best for</strong><span>Beginners to practitioners</span></div>
+            <div><strong>時間</strong><span>每週五 • 晚上 8:30 – 9:30 HKT</span></div>
+            <div><strong>形式</strong><span>線上直播研討會</span></div>
+            <div><strong>適合對象</strong><span>初學者至從業者</span></div>
           </div>
         </div>
       </section>
@@ -146,30 +150,30 @@
       <section class="section alt-section">
         <div class="container">
           <div class="section-head">
-            <span class="eyebrow">Our Core Training Categories</span>
-            <h2>Complete learning support from first steps to certification</h2>
+            <span class="eyebrow">核心培訓類別</span>
+            <h2>從入門到證照，提供全方位學習支援</h2>
           </div>
 
           <div class="card-grid categories-grid">
             <article class="info-card">
-              <h3>Official Vendor Courses</h3>
-              <p>Authorized Red Hat and CNCF training aligned to international certification standards.</p>
+              <h3>官方供應商課程</h3>
+              <p>授權 Red Hat 與 CNCF 課程，對齊國際認證標準。</p>
             </article>
             <article class="info-card">
-              <h3>CEF Approved Courses</h3>
-              <p>100% refundable eligible courses supporting personal lifelong learning.</p>
+              <h3>CEF 合資格課程</h3>
+              <p>100% 可申請退還，支援個人長期學習發展。</p>
             </article>
             <article class="info-card">
-              <h3>NITTP Enterprise Training</h3>
-              <p>Government matching funds to help enterprises reduce training costs.</p>
+              <h3>NITTP 企業培訓</h3>
+              <p>政府配對資助，協助企業降低培訓成本。</p>
             </article>
             <article class="info-card">
-              <h3>Short 1-Day Courses</h3>
-              <p>Intensive crash courses for exam sprints and rapid upskilling.</p>
+              <h3>短期 1 日課程</h3>
+              <p>針對考試衝刺與快速技能提升的高效密集課程。</p>
             </article>
             <article class="info-card">
-              <h3>Official Certificate Exams</h3>
-              <p>One-stop exam booking, voucher support, and streamlined certification guidance.</p>
+              <h3>官方證照考試</h3>
+              <p>一站式考試安排、代金券支援與精簡化認證指導。</p>
             </article>
           </div>
         </div>
@@ -178,25 +182,24 @@
       <section class="section funding-section">
         <div class="container funding-wrap">
           <div>
-            <span class="eyebrow">Government Funding Advantage</span>
-            <h2>Maximize legal, transparent, and efficient subsidy support</h2>
+            <span class="eyebrow">政府資助優勢</span>
+            <h2>最大化合法、透明且高效的資助支援</h2>
             <p>
-              As a registered training provider for both Hong Kong CEF and NITTP,
-              we help every learner and enterprise access funding correctly and confidently.
+              作為香港 CEF 與 NITTP 的註冊培訓機構，我們協助每位學員與企業安心、正確地申請資助。
             </p>
           </div>
           <div class="funding-list">
             <div>
               <strong>CEF</strong>
-              <span>Personal lifelong learning subsidies</span>
+              <span>個人終身學習資助</span>
             </div>
             <div>
               <strong>NITTP</strong>
-              <span>Corporate annual training support</span>
+              <span>企業年度培訓資助</span>
             </div>
             <div>
-              <strong>Transparent</strong>
-              <span>Clear guidance throughout the reimbursement process</span>
+              <strong>透明</strong>
+              <span>從申請到報銷流程一目了然</span>
             </div>
           </div>
         </div>
@@ -205,25 +208,25 @@
       <section class="section">
         <div class="container">
           <div class="section-head">
-            <span class="eyebrow">Why Choose TCC OpenTech Academy?</span>
-            <h2>Built for real career upgrading and enterprise capability growth</h2>
+            <span class="eyebrow">為什麼選擇 TCC OpenTech Academy？</span>
+            <h2>專為職涯升級與企業能力增長而設計</h2>
           </div>
           <div class="card-grid reasons-grid">
             <article class="quote-card">
-              <h3>Authorized Official Resources</h3>
-              <p>Vendor-certified programs and professional instructors with hands-on industry experience.</p>
+              <h3>授權官方資源</h3>
+              <p>供應商認證課程與具實務經驗的專業講師團隊。</p>
             </article>
             <article class="quote-card">
-              <h3>Dual Subsidy Coverage</h3>
-              <p>Support for both individual and corporate funding paths with practical guidance.</p>
+              <h3>雙重資助支持</h3>
+              <p>同時支援個人與企業資助方案，提供實用指導。</p>
             </article>
             <article class="quote-card">
-              <h3>Practical Teaching</h3>
-              <p>Focused on real workplace application rather than abstract theory.</p>
+              <h3>實務教學</h3>
+              <p>聚焦真實職場應用，而非抽象理論本身。</p>
             </article>
             <article class="quote-card">
-              <h3>Full Lifecycle Support</h3>
-              <p>Learning, revision, exam certification, and funding application assistance in one journey.</p>
+              <h3>全流程支援</h3>
+              <p>從學習、複習、考試認證到資助申請，一站式支援。</p>
             </article>
           </div>
         </div>
@@ -232,12 +235,12 @@
       <section class="section cta-section" id="contact">
         <div class="container cta-banner">
           <div>
-            <span class="eyebrow">Ready to start?</span>
-            <h2>Find the right course and maximize your funding support.</h2>
+            <span class="eyebrow">準備開始了嗎？</span>
+            <h2>找到適合你的課程，並善用資助支持。</h2>
           </div>
           <div class="cta-actions">
-            <a href="#courses" data-route="courses" class="btn btn-primary">Explore Courses</a>
-            <a href="#kube-friday" data-route="kube-friday" class="btn btn-secondary">Reserve a Free Seat</a>
+            <a href="#courses" data-route="courses" class="btn btn-primary" data-i18n="browseCourses">探索課程</a>
+            <a href="#kube-friday" data-route="kube-friday" class="btn btn-secondary" data-i18n="joinFreeKubeFriday">預留免費席位</a>
           </div>
         </div>
       </section>

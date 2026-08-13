@@ -211,6 +211,42 @@ select {
   border-radius: 10px;
 }
 
+.lang-switch {
+  min-height: 36px;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent, #1d4ed8);
+  background: #fff;
+  border: 1px solid rgba(29, 78, 216, 0.25);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.lang-switch:hover {
+  background: rgba(29, 78, 216, 0.08);
+  transform: translateY(-1px);
+}
+
+.lang-switch:focus-visible {
+  outline: 2px solid var(--accent, #1d4ed8);
+  outline-offset: 2px;
+}
+
+.subsidy-only {
+  display: none;
+}
+
+body.subsidy-on .subsidy-only {
+  display: block;
+}
+
+.subsidy-hidden {
+  display: none !important;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
