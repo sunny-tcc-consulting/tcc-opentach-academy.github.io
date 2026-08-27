@@ -235,11 +235,13 @@ select {
   outline-offset: 2px;
 }
 
-.subsidy-only {
+.subsidy-only,
+.dropdown-menu a.subsidy-only {
   display: none;
 }
 
-body.subsidy-on .subsidy-only {
+body.subsidy-on .subsidy-only,
+body.subsidy-on .dropdown-menu a.subsidy-only {
   display: block;
 }
 
