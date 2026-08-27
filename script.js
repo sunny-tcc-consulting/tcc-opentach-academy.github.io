@@ -14,7 +14,7 @@ const SUBSIDY_LABELS = {
 };
 
 const appState = {
-  language: "zh"
+  language: "en"
 };
 
 const navText = {
@@ -376,16 +376,16 @@ const courseTemplate = ({ eyebrow, title, copy, cards }) => `
 `;
 
 const kubeFridaySchedule = [
-  { id: 1, dates: { zh: "2026 年 10 月 2 日", en: "2 Oct 2026" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "What is K8s", focus: { zh: "Kubernetes 的歷史、編排概念與重要性。", en: "History, orchestration concepts, and why K8s matters." } },
-  { id: 2, dates: { zh: "2026 年 10 月 9 日", en: "9 Oct 2026" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "What is CRI", focus: { zh: "Docker、containerd 與 CRI-O 的差異。", en: "Docker vs. containerd vs. CRI-O." } },
-  { id: 3, dates: { zh: "2026 年 10 月 16 日", en: "16 Oct 2026" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "What is Control Plane", focus: { zh: "API server、etcd、scheduler 與 controller manager。", en: "API server, etcd, scheduler, and controller manager." } },
-  { id: 4, dates: { zh: "2026 年 10 月 23 日", en: "23 Oct 2026" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "What is kubelet", focus: { zh: "Node agent 與 pod 生存週期管理。", en: "Node agent and pod lifecycle management." } },
-  { id: 5, dates: { zh: "2026 年 10 月 30 日", en: "30 Oct 2026" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "What is CNI", focus: { zh: "Pods 如何透過網路介面互相通訊。", en: "How pods communicate via network interfaces." } },
-  { id: 6, dates: { zh: "—", en: "—" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "Minikube & Kubectl", focus: { zh: "本地叢集搭建與基本 CLI 使用。", en: "Local cluster setup and essential CLI use." } },
-  { id: 7, dates: { zh: "—", en: "—" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "Pods", focus: { zh: "單容器與多容器 Pod 的區別。", en: "Single-container vs. multi-container pods." } },
-  { id: 8, dates: { zh: "—", en: "—" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "Namespaces", focus: { zh: "資源隔離與虛擬叢集概念。", en: "Resource isolation and virtual cluster concepts." } },
-  { id: 9, dates: { zh: "—", en: "—" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "YAML in Kubernetes", focus: { zh: "編寫宣告式配置與 API 版本。", en: "Writing declarative manifests and API versions." } },
-  { id: 10, dates: { zh: "—", en: "—" }, module: { zh: "工作負載與控制器", en: "Workloads & Controllers" }, topic: "ReplicaSets", focus: { zh: "高可用性與穩定 Pod 集合管理。", en: "High availability and stable pod sets." } }
+  { id: 1, dates: { zh: "待定", en: "TBC" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "What is K8s", focus: { zh: "Kubernetes 的歷史、編排概念與重要性。", en: "History, orchestration concepts, and why K8s matters." } },
+  { id: 2, dates: { zh: "待定", en: "TBC" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "What is CRI", focus: { zh: "Docker、containerd 與 CRI-O 的差異。", en: "Docker vs. containerd vs. CRI-O." } },
+  { id: 3, dates: { zh: "待定", en: "TBC"}, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "What is Control Plane", focus: { zh: "API server、etcd、scheduler 與 controller manager。", en: "API server, etcd, scheduler, and controller manager." } },
+  { id: 4, dates: { zh: "待定", en: "TBC"}, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "What is kubelet", focus: { zh: "Node agent 與 pod 生存週期管理。", en: "Node agent and pod lifecycle management." } },
+  { id: 5, dates: { zh: "待定", en: "TBC" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "What is CNI", focus: { zh: "Pods 如何透過網路介面互相通訊。", en: "How pods communicate via network interfaces." } },
+  { id: 6, dates: { zh: "待定", en: "TBC" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "Minikube & Kubectl", focus: { zh: "本地叢集搭建與基本 CLI 使用。", en: "Local cluster setup and essential CLI use." } },
+  { id: 7, dates: { zh: "待定", en: "TBC"}, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "Pods", focus: { zh: "單容器與多容器 Pod 的區別。", en: "Single-container vs. multi-container pods." } },
+  { id: 8, dates: { zh: "待定", en: "TBC" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "Namespaces", focus: { zh: "資源隔離與虛擬叢集概念。", en: "Resource isolation and virtual cluster concepts." } },
+  { id: 9, dates: { zh: "待定", en: "TBC"}, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "YAML in Kubernetes", focus: { zh: "編寫宣告式配置與 API 版本。", en: "Writing declarative manifests and API versions." } },
+  { id: 10, dates: { zh: "待定", en: "TBC" }, module: { zh: "工作負載與控制器", en: "Workloads & Controllers" }, topic: "ReplicaSets", focus: { zh: "高可用性與穩定 Pod 集合管理。", en: "High availability and stable pod sets." } }
 ];
 
 const kubeFridayContent = {
