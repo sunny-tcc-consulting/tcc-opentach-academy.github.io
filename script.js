@@ -375,6 +375,158 @@ const courseTemplate = ({ eyebrow, title, copy, cards }) => `
   </section>
 `;
 
+const kubeFridaySchedule = [
+  { id: 1, dates: { zh: "2026 年 10 月 2 日", en: "2 Oct 2026" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "What is K8s", focus: { zh: "Kubernetes 的歷史、編排概念與重要性。", en: "History, orchestration concepts, and why K8s matters." } },
+  { id: 2, dates: { zh: "2026 年 10 月 9 日", en: "9 Oct 2026" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "What is CRI", focus: { zh: "Docker、containerd 與 CRI-O 的差異。", en: "Docker vs. containerd vs. CRI-O." } },
+  { id: 3, dates: { zh: "2026 年 10 月 16 日", en: "16 Oct 2026" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "What is Control Plane", focus: { zh: "API server、etcd、scheduler 與 controller manager。", en: "API server, etcd, scheduler, and controller manager." } },
+  { id: 4, dates: { zh: "2026 年 10 月 23 日", en: "23 Oct 2026" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "What is kubelet", focus: { zh: "Node agent 與 pod 生存週期管理。", en: "Node agent and pod lifecycle management." } },
+  { id: 5, dates: { zh: "2026 年 10 月 30 日", en: "30 Oct 2026" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "What is CNI", focus: { zh: "Pods 如何透過網路介面互相通訊。", en: "How pods communicate via network interfaces." } },
+  { id: 6, dates: { zh: "—", en: "—" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "Minikube & Kubectl", focus: { zh: "本地叢集搭建與基本 CLI 使用。", en: "Local cluster setup and essential CLI use." } },
+  { id: 7, dates: { zh: "—", en: "—" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "Pods", focus: { zh: "單容器與多容器 Pod 的區別。", en: "Single-container vs. multi-container pods." } },
+  { id: 8, dates: { zh: "—", en: "—" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "Namespaces", focus: { zh: "資源隔離與虛擬叢集概念。", en: "Resource isolation and virtual cluster concepts." } },
+  { id: 9, dates: { zh: "—", en: "—" }, module: { zh: "架構與基礎", en: "Architecture & Fundamentals" }, topic: "YAML in Kubernetes", focus: { zh: "編寫宣告式配置與 API 版本。", en: "Writing declarative manifests and API versions." } },
+  { id: 10, dates: { zh: "—", en: "—" }, module: { zh: "工作負載與控制器", en: "Workloads & Controllers" }, topic: "ReplicaSets", focus: { zh: "高可用性與穩定 Pod 集合管理。", en: "High availability and stable pod sets." } }
+];
+
+const kubeFridayContent = {
+  zh: {
+    eyebrow: "每週免費雲端與 Kubernetes 分享活動",
+    title: "Kube-Friday | 每週五晚一起學習雲端原生",
+    description: "一個輕鬆、實用、零費用的每週分享系列，幫助學習者在不感到壓力的情況下理解 Kubernetes、DevOps 與雲端原生概念。",
+    registerCta: "立即報名",
+    scheduleCta: "查看課程表",
+    intro: {
+      eyebrow: "Kube-Friday 是什麼？",
+      title: "每週五都在累積實用的雲端知識",
+      p1: "很多雲端課程冗長、昂貴且僵硬。Kube-Friday 旨在讓技術從業者透過短而實用、互動性強的分享內容，持續吸收雲端原生知識。",
+      p2: "每逢星期五晚上 8:30 PM 至 9:30 PM HKT，我們的講師會帶來輕鬆的現場直播，涵蓋雲端架構、Kubernetes 基礎、故障排除與實際工作場景中的學習重點。",
+      info: [
+        { label: "活動週期", value: "每週五" },
+        { label: "時間", value: "8:30 PM – 9:30 PM HKT" },
+        { label: "形式", value: "線上直播研討會" }
+      ]
+    },
+    value: {
+      eyebrow: "你能獲得什麼",
+      title: "每一場分享都帶來實際價值",
+      cards: [
+        { title: "系統化知識", text: "每週都能建立穩固的 Kubernetes 與雲端原生概念基礎。" },
+        { title: "現場問答", text: "直接向講師提問，當場解決技術困惑。" },
+        { title: "職場技能", text: "探索教科書或零散文章中較少提及的實用技能。" },
+        { title: "證照基礎", text: "為官方認證與職涯發展奠定扎實的基礎。" }
+      ]
+    },
+    scheduleSection: {
+      eyebrow: "活動安排",
+      title: "持續成長的每週雲端原生學習路線",
+      headers: { date: "日期", module: "模組", topic: "主題", focus: "重點" }
+    },
+    registerSection: {
+      eyebrow: "立即報名",
+      title: "參加下一場免費活動並接收最新資訊",
+      text: "完成報名後，您將收到會議連結、課程大綱與預習資料。",
+      cta: "填寫報名表"
+    },
+    faqSection: {
+      eyebrow: "常見問題",
+      title: "學員經常會問的問題",
+      items: [
+        { question: "活動有參與費用嗎？", answer: "完全免費，適合所有技術學習者參加。" },
+        { question: "如果錯過現場直播，我可以重看嗎？", answer: "已報名學員可查閱歷史學習資料與活動筆記，但不提供錄影重播。" },
+        { question: "我需要具備基礎技術知識才能參加嗎？", answer: "不需要。大多數活動從基礎入門開始，適合初學者參與。" }
+      ]
+    }
+  },
+  en: {
+    eyebrow: "Free Weekly Cloud & Kubernetes Session",
+    title: "Kube-Friday | Learn Cloud Native Every Friday Night",
+    description: "A casual, practical, zero-cost weekly sharing series to help learners understand Kubernetes, DevOps, and cloud-native concepts without pressure.",
+    registerCta: "Register Now",
+    scheduleCta: "View Schedule",
+    intro: {
+      eyebrow: "What is Kube-Friday?",
+      title: "Build practical cloud knowledge one Friday at a time",
+      p1: "Most cloud courses are long, expensive, and rigid. Kube-Friday is designed to help tech practitioners absorb cloud-native knowledge through short, practical, and interactive sessions.",
+      p2: "Every Friday from 8:30 PM to 9:30 PM HKT, our senior instructors deliver a relaxed live session covering cloud architecture, Kubernetes fundamentals, troubleshooting, and real workplace learning points.",
+      info: [
+        { label: "Session Cycle", value: "Weekly Friday" },
+        { label: "Time", value: "8:30 PM – 9:30 PM HKT" },
+        { label: "Format", value: "Online live webinar" }
+      ]
+    },
+    value: {
+      eyebrow: "What You Can Gain",
+      title: "Practical value from every session",
+      cards: [
+        { title: "Systematic knowledge", text: "Build a solid understanding of Kubernetes and cloud-native concepts every week." },
+        { title: "Live Q&A", text: "Learn directly from instructors and solve technical confusion on the spot." },
+        { title: "Workplace skills", text: "Explore practical skills not usually covered in textbooks or fragmented articles." },
+        { title: "Certification foundation", text: "Lay the groundwork needed for official certifications and career progression." }
+      ]
+    },
+    scheduleSection: {
+      eyebrow: "Upcoming Event Schedule",
+      title: "Weekly learning roadmap for cloud-native growth",
+      headers: { date: "Date", module: "Module", topic: "Topic", focus: "Focus" }
+    },
+    registerSection: {
+      eyebrow: "Register Now",
+      title: "Join the next free session and receive event updates",
+      text: "Complete your registration to get the meeting link, session outline, and pre-learning materials.",
+      cta: "Fill in the Registration Form"
+    },
+    faqSection: {
+      eyebrow: "FAQ",
+      title: "Questions learners often ask",
+      items: [
+        { question: "Is there any participation fee?", answer: "Completely free for all tech learners." },
+        { question: "Can I watch the replay if I miss the live session?", answer: "Registered members can access historical learning materials and session notes, but recordings are not provided for replay." },
+        { question: "Do I need basic tech knowledge to join?", answer: "No. Most sessions start from basic introduction and are suitable for beginners." }
+      ]
+    }
+  }
+};
+
+const buildKubeFridayPage = (lang) => {
+  const c = kubeFridayContent[lang];
+  const h = c.scheduleSection.headers;
+
+  const introInfo = c.intro.info
+    .map((item) => `<div class="mini-panel"><strong>${item.label}</strong><span>${item.value}</span></div>`)
+    .join("");
+
+  const valueCards = c.value.cards
+    .map((card) => `<article class="info-card"><h3>${card.title}</h3><p>${card.text}</p></article>`)
+    .join("");
+
+  const scheduleRows = kubeFridaySchedule
+    .map((row) => `<tr><td>${row.id}</td><td>${row.dates[lang]}</td><td>${row.module[lang]}</td><td>${row.topic}</td><td>${row.focus[lang]}</td></tr>`)
+    .join("");
+
+  const faqItems = c.faqSection.items
+    .map((item, idx) => `<div class="faq-item${idx === 0 ? " active" : ""}"><button class="faq-question" type="button">${item.question}</button><div class="faq-answer"><p>${item.answer}</p></div></div>`)
+    .join("");
+
+  return `
+    <section class="page-hero small-hero">
+      <div class="container narrow-hero">
+        <span class="eyebrow">${c.eyebrow}</span>
+        <h1>${c.title}</h1>
+        <p>${c.description}</p>
+        <div class="cta-row">
+          <a href="#register" class="btn btn-primary">${c.registerCta}</a>
+          <a href="#schedule" class="btn btn-secondary">${c.scheduleCta}</a>
+        </div>
+      </div>
+    </section>
+    <section class="section"><div class="container two-column"><div><span class="eyebrow">${c.intro.eyebrow}</span><h2>${c.intro.title}</h2><p>${c.intro.p1}</p><p>${c.intro.p2}</p></div><div class="info-stack">${introInfo}</div></div></section>
+    <section class="section alt-section"><div class="container"><div class="section-head"><span class="eyebrow">${c.value.eyebrow}</span><h2>${c.value.title}</h2></div><div class="card-grid reasons-grid">${valueCards}</div></div></section>
+    <section class="section" id="schedule"><div class="container"><div class="section-head"><span class="eyebrow">${c.scheduleSection.eyebrow}</span><h2>${c.scheduleSection.title}</h2></div><div class="table-wrap"><table><thead><tr><th>#</th><th>${h.date}</th><th>${h.module}</th><th>${h.topic}</th><th>${h.focus}</th></tr></thead><tbody>${scheduleRows}</tbody></table></div></div></section>
+    <section class="section alt-section" id="register"><div class="container register-box"><div><span class="eyebrow">${c.registerSection.eyebrow}</span><h2>${c.registerSection.title}</h2><p>${c.registerSection.text}</p></div><a href="https://forms.gle/1RiszqLRp8kUZxto6" target="_blank" rel="noopener noreferrer" class="btn btn-primary">${c.registerSection.cta}</a></div></section>
+    <section class="section faq-section"><div class="container"><div class="section-head"><span class="eyebrow">${c.faqSection.eyebrow}</span><h2>${c.faqSection.title}</h2></div><div class="faq-list">${faqItems}</div></div></section>
+  `;
+};
+
 const pageTemplates = {
   zh: {
     home: buildHomePage("zh"),
@@ -461,24 +613,7 @@ const pageTemplates = {
       highlightsLabel: "亮點",
       highlightsTitle: "本頁內容"
     }),
-    "kube-friday": `
-      <section class="page-hero small-hero">
-        <div class="container narrow-hero">
-          <span class="eyebrow">每週免費雲端與 Kubernetes 分享活動</span>
-          <h1>Kube-Friday | 每週五晚一起學習雲端原生</h1>
-          <p>一個輕鬆、實用、零費用的每週分享系列，幫助學習者在不感到壓力的情況下理解 Kubernetes、DevOps 與雲端原生概念。</p>
-          <div class="cta-row">
-            <a href="#register" class="btn btn-primary">立即報名</a>
-            <a href="#schedule" class="btn btn-secondary">查看課程表</a>
-          </div>
-        </div>
-      </section>
-      <section class="section"><div class="container two-column"><div><span class="eyebrow">Kube-Friday 是什麼？</span><h2>每週五都在累積實用的雲端知識</h2><p>很多雲端課程冗長、昂貴且僵硬。Kube-Friday 旨在讓技術從業者透過短而實用、互動性強的分享內容，持續吸收雲端原生知識。</p><p>每逢星期五晚上 8:30 PM 至 9:30 PM HKT，我們的講師會帶來輕鬆的現場直播，涵蓋雲端架構、Kubernetes 基礎、故障排除與實際工作場景中的學習重點。</p></div><div class="info-stack"><div class="mini-panel"><strong>活動週期</strong><span>每週五</span></div><div class="mini-panel"><strong>時間</strong><span>8:30 PM – 9:30 PM HKT</span></div><div class="mini-panel"><strong>形式</strong><span>線上直播研討會</span></div></div></div></section>
-      <section class="section alt-section"><div class="container"><div class="section-head"><span class="eyebrow">你能獲得什麼</span><h2>每一場分享都帶來實際價值</h2></div><div class="card-grid reasons-grid"><article class="info-card"><h3>系統化知識</h3><p>每週都能建立穩固的 Kubernetes 與雲端原生概念基礎。</p></article><article class="info-card"><h3>現場問答</h3><p>直接向講師提問，當場解決技術困惑。</p></article><article class="info-card"><h3>職場技能</h3><p>探索教科書或零散文章中較少提及的實用技能。</p></article><article class="info-card"><h3>證照基礎</h3><p>為官方認證與職涯發展奠定扎實的基礎。</p></article></div></div></section>
-      <section class="section" id="schedule"><div class="container"><div class="section-head"><span class="eyebrow">活動安排</span><h2>持續成長的每週雲端原生學習路線</h2></div><div class="table-wrap"><table><thead><tr><th>#</th><th>日期</th><th>模組</th><th>主題</th><th>重點</th></tr></thead><tbody><tr><td>1</td><td>2026 年 10 月 2 日</td><td>架構與基礎</td><td>What is K8s</td><td>Kubernetes 的歷史、編排概念與重要性。</td></tr><tr><td>2</td><td>2026 年 10 月 9 日</td><td>架構與基礎</td><td>What is CRI</td><td>Docker、containerd 與 CRI-O 的差異。</td></tr><tr><td>3</td><td>2026 年 10 月 16 日</td><td>架構與基礎</td><td>What is Control Plane</td><td>API server、etcd、scheduler 與 controller manager。</td></tr><tr><td>4</td><td>2026 年 10 月 23 日</td><td>架構與基礎</td><td>What is kubelet</td><td>Node agent 與 pod 生存週期管理。</td></tr><tr><td>5</td><td>2026 年 10 月 30 日</td><td>架構與基礎</td><td>What is CNI</td><td>Pods 如何透過網路介面互相通訊。</td></tr><tr><td>6</td><td>—</td><td>架構與基礎</td><td>Minikube &amp; Kubectl</td><td>本地叢集搭建與基本 CLI 使用。</td></tr><tr><td>7</td><td>—</td><td>架構與基礎</td><td>Pods</td><td>單容器與多容器 Pod 的區別。</td></tr><tr><td>8</td><td>—</td><td>架構與基礎</td><td>Namespaces</td><td>資源隔離與虛擬叢集概念。</td></tr><tr><td>9</td><td>—</td><td>架構與基礎</td><td>YAML in Kubernetes</td><td>編寫宣告式配置與 API 版本。</td></tr><tr><td>10</td><td>—</td><td>工作負載與控制器</td><td>ReplicaSets</td><td>高可用性與穩定 Pod 集合管理。</td></tr></tbody></table></div></div></section>
-      <section class="section alt-section" id="register"><div class="container register-box"><div><span class="eyebrow">立即報名</span><h2>參加下一場免費活動並接收最新資訊</h2><p>完成報名後，您將收到會議連結、課程大綱與預習資料。</p></div><a href="#" class="btn btn-primary">填寫報名表</a></div></section>
-      <section class="section faq-section"><div class="container"><div class="section-head"><span class="eyebrow">常見問題</span><h2>學員經常會問的問題</h2></div><div class="faq-list"><div class="faq-item active"><button class="faq-question" type="button">活動有參與費用嗎？</button><div class="faq-answer"><p>完全免費，適合所有技術學習者參加。</p></div></div><div class="faq-item"><button class="faq-question" type="button">如果錯過現場直播，我可以重看嗎？</button><div class="faq-answer"><p>已報名學員可查閱歷史學習資料與活動筆記，但不提供錄影重播。</p></div></div><div class="faq-item"><button class="faq-question" type="button">我需要具備基礎技術知識才能參加嗎？</button><div class="faq-answer"><p>不需要。大多數活動從基礎入門開始，適合初學者參與。</p></div></div></div></div></section>
-    `
+    "kube-friday": buildKubeFridayPage("zh"),
   },
   en: {
     home: buildHomePage("en"),
@@ -565,24 +700,7 @@ const pageTemplates = {
       highlightsLabel: "Highlights",
       highlightsTitle: "What this page covers"
     }),
-    "kube-friday": `
-      <section class="page-hero small-hero">
-        <div class="container narrow-hero">
-          <span class="eyebrow">Free Weekly Cloud &amp; Kubernetes Session</span>
-          <h1>Kube-Friday | Learn Cloud Native Every Friday Night</h1>
-          <p>A casual, practical, zero-cost weekly sharing series to help learners understand Kubernetes, DevOps, and cloud-native concepts without pressure.</p>
-          <div class="cta-row">
-            <a href="#register" class="btn btn-primary">Register Now</a>
-            <a href="#schedule" class="btn btn-secondary">View Schedule</a>
-          </div>
-        </div>
-      </section>
-      <section class="section"><div class="container two-column"><div><span class="eyebrow">What is Kube-Friday?</span><h2>Build practical cloud knowledge one Friday at a time</h2><p>Most cloud courses are long, expensive, and rigid. Kube-Friday is designed to help tech practitioners absorb cloud-native knowledge through short, practical, and interactive sessions.</p><p>Every Friday from 8:30 PM to 9:30 PM HKT, our senior instructors deliver a relaxed live session covering cloud architecture, Kubernetes fundamentals, troubleshooting, and real workplace learning points.</p></div><div class="info-stack"><div class="mini-panel"><strong>Session Cycle</strong><span>Weekly Friday</span></div><div class="mini-panel"><strong>Time</strong><span>8:30 PM – 9:30 PM HKT</span></div><div class="mini-panel"><strong>Format</strong><span>Online live webinar</span></div></div></div></section>
-      <section class="section alt-section"><div class="container"><div class="section-head"><span class="eyebrow">What You Can Gain</span><h2>Practical value from every session</h2></div><div class="card-grid reasons-grid"><article class="info-card"><h3>Systematic knowledge</h3><p>Build a solid understanding of Kubernetes and cloud-native concepts every week.</p></article><article class="info-card"><h3>Live Q&amp;A</h3><p>Learn directly from instructors and solve technical confusion on the spot.</p></article><article class="info-card"><h3>Workplace skills</h3><p>Explore practical skills not usually covered in textbooks or fragmented articles.</p></article><article class="info-card"><h3>Certification foundation</h3><p>Lay the groundwork needed for official certifications and career progression.</p></article></div></div></section>
-      <section class="section" id="schedule"><div class="container"><div class="section-head"><span class="eyebrow">Upcoming Event Schedule</span><h2>Weekly learning roadmap for cloud-native growth</h2></div><div class="table-wrap"><table><thead><tr><th>#</th><th>Date</th><th>Module</th><th>Topic</th><th>Focus</th></tr></thead><tbody><tr><td>1</td><td>2 Oct 2026</td><td>Architecture &amp; Fundamentals</td><td>What is K8s</td><td>History, orchestration concepts, and why K8s matters.</td></tr><tr><td>2</td><td>9 Oct 2026</td><td>Architecture &amp; Fundamentals</td><td>What is CRI</td><td>Docker vs. containerd vs. CRI-O.</td></tr><tr><td>3</td><td>16 Oct 2026</td><td>Architecture &amp; Fundamentals</td><td>What is Control Plane</td><td>API server, etcd, scheduler, and controller manager.</td></tr><tr><td>4</td><td>23 Oct 2026</td><td>Architecture &amp; Fundamentals</td><td>What is kubelet</td><td>Node agent and pod lifecycle management.</td></tr><tr><td>5</td><td>30 Oct 2026</td><td>Architecture &amp; Fundamentals</td><td>What is CNI</td><td>How pods communicate via network interfaces.</td></tr><tr><td>6</td><td>—</td><td>Architecture &amp; Fundamentals</td><td>Minikube &amp; Kubectl</td><td>Local cluster setup and essential CLI use.</td></tr><tr><td>7</td><td>—</td><td>Architecture &amp; Fundamentals</td><td>Pods</td><td>Single-container vs. multi-container pods.</td></tr><tr><td>8</td><td>—</td><td>Architecture &amp; Fundamentals</td><td>Namespaces</td><td>Resource isolation and virtual cluster concepts.</td></tr><tr><td>9</td><td>—</td><td>Architecture &amp; Fundamentals</td><td>YAML in Kubernetes</td><td>Writing declarative manifests and API versions.</td></tr><tr><td>10</td><td>—</td><td>Workloads &amp; Controllers</td><td>ReplicaSets</td><td>High availability and stable pod sets.</td></tr></tbody></table></div></div></section>
-      <section class="section alt-section" id="register"><div class="container register-box"><div><span class="eyebrow">Register Now</span><h2>Join the next free session and receive event updates</h2><p>Complete your registration to get the meeting link, session outline, and pre-learning materials.</p></div><a href="#" class="btn btn-primary">Fill in the Registration Form</a></div></section>
-      <section class="section faq-section"><div class="container"><div class="section-head"><span class="eyebrow">FAQ</span><h2>Questions learners often ask</h2></div><div class="faq-list"><div class="faq-item active"><button class="faq-question" type="button">Is there any participation fee?</button><div class="faq-answer"><p>Completely free for all tech learners.</p></div></div><div class="faq-item"><button class="faq-question" type="button">Can I watch the replay if I miss the live session?</button><div class="faq-answer"><p>Registered members can access historical learning materials and session notes, but recordings are not provided for replay.</p></div></div><div class="faq-item"><button class="faq-question" type="button">Do I need basic tech knowledge to join?</button><div class="faq-answer"><p>No. Most sessions start from basic introduction and are suitable for beginners.</p></div></div></div></div></section>
-    `
+    "kube-friday": buildKubeFridayPage("en"),
   }
 };
 
