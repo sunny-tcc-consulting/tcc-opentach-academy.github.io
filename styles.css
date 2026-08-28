@@ -490,7 +490,7 @@ h2 {
 }
 
 .categories-grid {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
 }
 
 .info-card,
@@ -824,7 +824,7 @@ th {
   }
 
   .categories-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* responsive auto-fit handled in base rule */
   }
 
   .courses-grid,
@@ -885,7 +885,6 @@ th {
 }
 
 @media (max-width: 640px) {
-  .categories-grid,
   .courses-grid,
   .feature-grid {
     grid-template-columns: 1fr;
