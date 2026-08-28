@@ -504,7 +504,7 @@ h2 {
 }
 
 .reasons-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
 }
 
 .funding-wrap {
@@ -827,7 +827,6 @@ th {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .reasons-grid,
   .courses-grid,
   .feature-grid {
     grid-template-columns: 1fr 1fr;
@@ -887,7 +886,6 @@ th {
 
 @media (max-width: 640px) {
   .categories-grid,
-  .reasons-grid,
   .courses-grid,
   .feature-grid {
     grid-template-columns: 1fr;
