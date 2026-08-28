@@ -62,27 +62,49 @@ const navText = {
   }
 };
 
+const currentSession = {
+  zh: {
+    label: "本週於 TCC",
+    title: "CKA 一日衝刺實驗坊連考試",
+    items: [
+      "適合已完成官方 CKA 訓練、掌握考試核心範圍的學員",
+      "CKA 一日衝刺實驗坊，密集實操訓練快速備戰 CKA 考試",
+      "課程已包含官方 CKA 考試券"
+    ],
+    intake: "下一批開課：10 月 12 日",
+    pill: "名額有限",
+    url: "https://forms.gle/TphxSqcE3Wnvwriv8"
+  },
+  en: {
+    label: "This Week at TCC",
+    title: "CKA 1‑Day Boost Lab with Exam",
+    items: [
+      "For learners who have completed official CKA training & grasp core exam domains",
+      "CKA 1‑Day Boost Lab, intensive hands‑on practice to get you exam‑ready fast",
+      "Course includes official CKA exam voucher"
+    ],
+    intake: "Next intake: 12 Oct",
+    pill: "Limited Seats",
+    url: "https://forms.gle/TphxSqcE3Wnvwriv8"
+  }
+};
+
 const buildHomePage = (lang) => {
   const isZh = lang === "zh";
   const text = isZh ? {
-    eyebrow: "政府資助培訓課程",
+    eyebrow: "專業雲端與 Kubernetes 培訓",
     title: "提升你的雲端、Kubernetes 與工業技術能力",
-    heroText: "與認證講師學習，接觸官方供應商培訓，並在每個合資格課程中節省最多 <strong>HK$25,000 個人資助</strong> / <strong>HK$250,000 企業年度資助</strong>。",
+    heroText: "與認證講師學習，接觸官方供應商培訓，全面強化你的雲端、Kubernetes 與工業技術能力。",
     browse: "瀏覽所有課程",
-    check: "查詢資助資格",
+    check: "聯絡我們",
     join: "免費參加 Kube-Friday",
-    stat1: "CEF 合資格",
+    stat1: "實作導向",
     stat2: "Kube-Friday",
     stat3: "Red Hat & CNCF",
-    weekLabel: "本週於 TCC",
-    weekTitle: "雲端原生基礎課程",
-    weekItems: ["官方供應商對齊課程大綱", "實作練習與從業者經驗分享", "CEF 與 NITTP 資助指南"],
-    intake: "下一批開課：10 月 12 日",
-    pill: "名額有限",
     feature1Title: "官方授權資源",
     feature1Text: "供應商認證課程，配合專業教學指導。",
-    feature2Title: "雙重資助支持",
-    feature2Text: "個人 CEF 與企業 NITTP 資助規劃支持。",
+    feature2Title: "彈性學習方案",
+    feature2Text: "為個人與企業團隊提供合適的進修安排。",
     feature3Title: "實務導向學習",
     feature3Text: "培養真實工作場景所需技能，而非單純理論。",
     upcoming: "即將舉行的 Kube-Friday",
@@ -117,35 +139,30 @@ const buildHomePage = (lang) => {
     whyTitle: "專為職涯升級與企業能力增長而設計",
     why1: "授權官方資源",
     why1Text: "供應商認證課程與具實務經驗的專業講師團隊。",
-    why2: "雙重資助支持",
-    why2Text: "同時支援個人與企業資助方案，提供實用指導。",
+    why2: "個人與企業兼顧",
+    why2Text: "同時支援個人與企業培訓需求，提供實用指導。",
     why3: "實務教學",
     why3Text: "聚焦真實職場應用，而非抽象理論本身。",
     why4: "全流程支援",
-    why4Text: "從學習、複習、考試認證到資助申請，一站式支援。",
+    why4Text: "從學習、複習、考試認證到團隊規劃，一站式支援。",
     ready: "準備開始了嗎？",
-    readyTitle: "找到適合你的課程，並善用資助支持。",
+    readyTitle: "找到適合你的課程，立即開始學習。",
     explore: "探索課程",
     reserve: "預留免費席位"
   } : {
-    eyebrow: "Government Subsidy Eligible Training",
+    eyebrow: "Professional Cloud & Kubernetes Training",
     title: "Level Up Your Cloud, Kubernetes & Industrial Tech Skills",
-    heroText: "Learn from certified industry instructors, access official vendor training, and save up to <strong>HK$25,000 personal subsidy</strong> / <strong>HK$250,000 corporate annual funding</strong> on every eligible course.",
+    heroText: "Learn from certified industry instructors, access official vendor training, and strengthen your cloud, Kubernetes, and industrial tech capabilities end to end.",
     browse: "Browse All Courses",
-    check: "Check Subsidy Eligibility",
+    check: "Contact Us",
     join: "Join Free Kube-Friday",
-    stat1: "CEF eligible",
+    stat1: "Hands-on",
     stat2: "Kube-Friday",
     stat3: "Red Hat & CNCF",
-    weekLabel: "This Week at TCC",
-    weekTitle: "Cloud Native Essentials",
-    weekItems: ["Official vendor-aligned curriculum", "Hands-on labs and practitioner insight", "CEF and NITTP funding guidance"],
-    intake: "Next intake: 12 Oct",
-    pill: "Limited Seats",
     feature1Title: "Authorized Official Resources",
     feature1Text: "Vendor-certified courses with professional teaching guidance.",
-    feature2Title: "Dual Subsidy Coverage",
-    feature2Text: "Personal CEF plus corporate NITTP funding support.",
+    feature2Title: "Flexible Learning Paths",
+    feature2Text: "Suitable upskilling arrangements for individuals and enterprise teams.",
     feature3Title: "Practical Learning",
     feature3Text: "Real workplace skills, not rigid classroom theory alone.",
     upcoming: "Upcoming Kube-Friday",
@@ -180,14 +197,14 @@ const buildHomePage = (lang) => {
     whyTitle: "Built for real career upgrading and enterprise capability growth",
     why1: "Authorized Official Resources",
     why1Text: "Vendor-certified programs and professional instructors with hands-on industry experience.",
-    why2: "Dual Subsidy Coverage",
-    why2Text: "Support for both individual and corporate funding paths with practical guidance.",
+    why2: "For Individuals and Teams",
+    why2Text: "Practical support for both individual learners and enterprise training needs.",
     why3: "Practical Teaching",
     why3Text: "Focused on real workplace application rather than abstract theory.",
     why4: "Full Lifecycle Support",
-    why4Text: "Learning, revision, exam certification, and funding application assistance in one journey.",
+    why4Text: "Learning, revision, exam certification, and team planning in one journey.",
     ready: "Ready to start?",
-    readyTitle: "Find the right course and maximize your funding support.",
+    readyTitle: "Find the right course and start learning today.",
     explore: "Explore Courses",
     reserve: "Reserve a Free Seat"
   };
@@ -213,19 +230,17 @@ const buildHomePage = (lang) => {
 
         <div class="hero-panel">
           <div class="floating-card">
-            <p class="panel-label">${text.weekLabel}</p>
-            <h3>${text.weekTitle}</h3>
+            <p class="panel-label">${currentSession[lang].label}</p>
+            <h3>${currentSession[lang].title}</h3>
             <ul>
-              ${text.weekItems.map((item) => `<li>${item}</li>`).join("")}
+              ${currentSession[lang].items.map((item) => `<li>${item}</li>`).join("")}
             </ul>
             <div class="panel-meta">
-              <span>${text.intake}</span>
-              <span class="pill">${text.pill}</span>
+              <span>${currentSession[lang].intake}</span>
+              <a href="${currentSession[lang].url}" target="_blank" rel="noopener noreferrer" class="pill">${currentSession[lang].pill}</a>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
     <section class="feature-band">
       <div class="container feature-grid">
@@ -568,9 +583,9 @@ const pageTemplates = {
       title: "考試準備支援與官方認證指導",
       copy: "選擇聚焦考試的培訓方案，從先決條件到學習方向都更清晰。",
       cards: [
-        { badge: "Exam Prep", title: "RHCSA 準備路線", meta: "Red Hat • 考試準備", note: "實作型命令列與系統技能" },
-        { badge: "Exam Prep", title: "CKA 準備工作坊", meta: "CNCF • Kubernetes 精通", note: "叢集管理與故障排除" },
-        { badge: "Exam Prep", title: "CKAD 實作精要", meta: "CNCF • 應用流程", note: "Kubernetes 應用開發與除錯" }
+        { badge: "Exam Prep", title: "RHCSA 一日衝刺實驗坊連考試", meta: "Red Hat • 考試準備", note: "專為已完成官方 RHCSA 訓練、具備 RHCSA 基礎知識的學員打造的考試強化密集課程，課程已包含官方 RHCSA 考試券。" },
+        { badge: "Exam Prep", title: "CKA 一日衝刺實驗坊連考試", meta: "CNCF • Kubernetes 精通", note: "專為已完成官方 CKA 訓練、具備 CKA 基礎知識的學員打造的考試強化密集課程，課程已包含官方 CKA 考試券。" },
+        { badge: "Exam Prep", title: "CKAD 一日衝刺實驗坊連考試", meta: "CNCF • 應用流程", note: "專為已完成官方 CKAD 訓練、具備 CKAD 基礎知識的學員打造的考試強化密集課程，課程已包含官方 CKAD 考試券。" }
       ]
     }),
     "enterprise-training": basicPageTemplate({
@@ -653,11 +668,11 @@ const pageTemplates = {
     "courses-exams": courseTemplate({
       eyebrow: "Certificate Exams",
       title: "Exam preparation support and official certification guidance",
-      copy: "Choose exam-focused training with clear prerequisites, learning direction, and confident readiness support.",
+      copy: "Choose exam-focused training with clear prerequisites, learning direction, and confident readiness support. Exam Voucher is included!",
       cards: [
-        { badge: "Exam Prep", title: "RHCSA Preparation Path", meta: "Red Hat • exam readiness", note: "Hands-on command-line and systems skills" },
-        { badge: "Exam Prep", title: "CKA Preparation Lab", meta: "CNCF • Kubernetes mastery", note: "Cluster administration and troubleshooting" },
-        { badge: "Exam Prep", title: "CKAD Practice Essentials", meta: "CNCF • application workflows", note: "Kubernetes app development and debugging" }
+        { badge: "Exam Prep", title: "RHCSA 1 Day Boost Lab with Exam", meta: "Red Hat • exam readiness", note: "An intensive exam‑focused crash session for learners who have completed official RHCSA training and possess foundational RHCSA knowledge, including your official RHCSA exam voucher" },
+        { badge: "Exam Prep", title: "CKA 1 Day Boost Lab with Exam", meta: "CNCF • Kubernetes mastery", note: "An intensive exam‑focused crash session for learners who have completed official CKA training and possess foundational CKA knowledge, including your official CKA exam voucher" },
+        { badge: "Exam Prep", title: "CKAD 1 Day Boost Lab with Exam", meta: "CNCF • application workflows", note: "An intensive exam‑focused crash session for learners who have completed official CKAD training and possess foundational CKAD knowledge, including your official CKAD exam voucher" }
       ]
     }),
     "enterprise-training": basicPageTemplate({
