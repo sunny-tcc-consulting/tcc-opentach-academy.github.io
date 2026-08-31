@@ -536,6 +536,28 @@ h2 {
   align-items: center;
 }
 
+/* Training-center preview section: give the images more room on wide screens */
+#training-center-preview .funding-wrap {
+  grid-template-columns: 1fr 1.6fr;
+  align-items: start;
+}
+
+#training-center-preview .training-center-tile {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#training-center-preview .training-center-tile figcaption {
+  margin-top: auto;
+}
+
+@media (max-width: 980px) {
+  #training-center-preview .funding-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
 .funding-list {
   display: grid;
   gap: 1rem;
@@ -807,8 +829,8 @@ th {
 
 .training-center-preview-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.85rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
 }
 
 .training-center-tile {
