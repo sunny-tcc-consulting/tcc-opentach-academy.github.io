@@ -3,11 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TCC OpenTech Academy | Upskill Smarter</title>
+    <meta name="theme-color" content="#e74c3c" />
+    <meta name="theme-color" content="#e74c3c" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="application-name" content="TCC OpenTech Academy" />
+    <meta name="apple-mobile-web-app-title" content="OpenTech Academy" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Primary Meta Tags -->
+    <title>TCC OpenTech Academy | 雲端與 Kubernetes 培訓</title>
+    <meta name="title" content="TCC OpenTech Academy | Cloud & Kubernetes Training Hong Kong" />
     <meta
       name="description"
-      content="TCC OpenTech Academy provides official vendor training, CEF approved courses, Kubernetes training, and enterprise upskilling with government subsidy support."
+      content="官方 Red Hat 與 CNCF 認證培訓中心，提供 CKA / CKAD / CKS、OpenShift、企業雲端及 DevOps 課程，享 CEF / NITTP 資助。免費 Kube-Friday 每週技術分享。Vendor-aligned Kubernetes and cloud training in Hong Kong."
     />
+    <meta
+      name="keywords"
+      content="Red Hat training, Kubernetes training, CKA, CKAD, CKS, CNCF, OpenShift, cloud native, DevOps, 雲端培訓, Kubernetes 課程, 香港, Hong Kong, TCC OpenTech Academy, 企業培訓, IT certification, 認證, CEF, NITTP, Kube-Friday"
+    />
+    <meta name="author" content="TCC OpenTech Academy" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="rating" content="General" />
+    <meta name="distribution" content="Global" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="language" content="zh-Hant, en" />
+    <meta name="geo.region" content="HK" />
+    <meta name="geo.placename" content="Hong Kong" />
+
+    <!-- Canonical & hreflang -->
+    <link rel="canonical" href="https://opentech-academy.com/" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://opentech-academy.com/?lang=zh" />
+    <link rel="alternate" hreflang="en" href="https://opentech-academy.com/?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://opentech-academy.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://opentech-academy.com/" />
+    <meta property="og:title" content="TCC OpenTech Academy | Cloud & Kubernetes Training" />
+    <meta
+      property="og:description"
+      content="Official Red Hat & CNCF training, Kubernetes certification, and enterprise cloud upskilling. Vendor-aligned, hands-on, practitioner-led courses in Hong Kong."
+    />
+    <meta property="og:image" content="https://opentech-academy.com/Final%20Logo.png" />
+    <meta property="og:image:secure_url" content="https://opentech-academy.com/Final%20Logo.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="TCC OpenTech Academy — Cloud, Kubernetes &amp; DevOps Training Hong Kong" />
+    <meta property="og:locale" content="zh_HK" />
+    <meta property="og:locale:alternate" content="en_HK" />
+    <meta property="og:site_name" content="TCC OpenTech Academy" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://opentech-academy.com/" />
+    <meta name="twitter:title" content="TCC OpenTech Academy | Cloud & Kubernetes Training" />
+    <meta
+      name="twitter:description"
+      content="Official Red Hat & CNCF training, Kubernetes certification, and enterprise cloud upskilling in Hong Kong."
+    />
+    <meta name="twitter:image" content="https://opentech-academy.com/Final%20Logo.png" />
+    <meta name="twitter:image:alt" content="TCC OpenTech Academy logo" />
+
+    <!-- Icons -->
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="Final Logo.png" />
+    <link rel="apple-touch-icon" href="Final Logo.png" />
+
+    <!-- Performance: preload above-the-fold resources -->
+    <link rel="preload" as="image" href="Final Logo.png" fetchpriority="high" />
+    <link rel="preload" as="style" href="styles.css" />
+
+    <!-- Fonts & Styles -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,12 +87,274 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- JSON-LD: Organization -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "@id": "https://opentech-academy.com/#organization",
+        "name": "TCC OpenTech Academy",
+        "alternateName": "TCC OpenTech Academy",
+        "url": "https://opentech-academy.com/",
+        "logo": "https://opentech-academy.com/Final%20Logo.png",
+        "description": "Official vendor-aligned training provider for Red Hat, CNCF, and Kubernetes certifications in Hong Kong. Hands-on practitioner-led cloud, Kubernetes, and DevOps courses for individuals and enterprise teams.",
+        "foundingLocation": {
+          "@type": "Place",
+          "name": "Hong Kong"
+        },
+        "areaServed": [
+          { "@type": "Country", "name": "Hong Kong" },
+          { "@type": "AdministrativeArea", "name": "Asia Pacific" }
+        ],
+        "knowsLanguage": ["zh-Hant", "en"],
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "TCC Consulting",
+          "url": "https://www.tcc-consulting.com.hk"
+        },
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "telephone": "+852-2870-2700",
+            "email": "info@opentech-academy.com",
+            "availableLanguage": ["Chinese", "English"]
+          }
+        ],
+        "sameAs": []
+      }
+    </script>
+
+    <!-- JSON-LD: WebSite with SearchAction -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://opentech-academy.com/#website",
+        "url": "https://opentech-academy.com/",
+        "name": "TCC OpenTech Academy",
+        "description": "Official Red Hat & CNCF training, Kubernetes certification, and enterprise cloud upskilling.",
+        "publisher": { "@id": "https://opentech-academy.com/#organization" },
+        "inLanguage": ["zh-Hant", "en"]
+      }
+    </script>
+
+    <!-- JSON-LD: Course Catalog (ItemList) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "@id": "https://opentech-academy.com/#courses",
+        "name": "Official Vendor Training Courses",
+        "description": "Authorized Red Hat and CNCF training programs aligned to international certification standards.",
+        "itemListOrder": "https://schema.org/ItemListOrderAscending",
+        "numberOfItems": 6,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Course",
+              "name": "Red Hat OpenShift Administration I (DO180)",
+              "description": "Operating a production OpenShift cluster. Prepares for the Red Hat Certified OpenShift Administrator exam.",
+              "provider": { "@id": "https://opentech-academy.com/#organization" },
+              "inLanguage": ["en", "zh-Hant"]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Course",
+              "name": "Red Hat OpenShift Administration II (DO280)",
+              "description": "Configuring production OpenShift clusters. Prepares for the Red Hat Certified OpenShift Administrator exam.",
+              "provider": { "@id": "https://opentech-academy.com/#organization" },
+              "inLanguage": ["en", "zh-Hant"]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Course",
+              "name": "OpenShift Development I (DO188)",
+              "description": "Introduction to containers with Podman. Prepares for the Red Hat Certified OpenShift Application Developer exam.",
+              "provider": { "@id": "https://opentech-academy.com/#organization" },
+              "inLanguage": ["en", "zh-Hant"]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Course",
+              "name": "Kubernetes Administration (LF458 / LFS458)",
+              "description": "Cluster administration and operations. Prepares for the Certified Kubernetes Administrator (CKA) exam.",
+              "provider": { "@id": "https://opentech-academy.com/#organization" },
+              "inLanguage": ["en", "zh-Hant"]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "Course",
+              "name": "Kubernetes for App Developers (LF459)",
+              "description": "Application development on Kubernetes. Prepares for the Certified Kubernetes Application Developer (CKAD) exam.",
+              "provider": { "@id": "https://opentech-academy.com/#organization" },
+              "inLanguage": ["en", "zh-Hant"]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "Course",
+              "name": "Kubernetes Security Fundamentals (LF460)",
+              "description": "Security essentials for Kubernetes. Prepares for the Certified Kubernetes Security Specialist (CKS) exam.",
+              "provider": { "@id": "https://opentech-academy.com/#organization" },
+              "inLanguage": ["en", "zh-Hant"]
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- JSON-LD: FAQPage for Kube-Friday -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://opentech-academy.com/#faq-kube-friday",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is there any participation fee for Kube-Friday?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Kube-Friday is completely free for all tech learners."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I watch the replay if I miss the live Kube-Friday session?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Registered members can access historical learning materials and session notes, but recordings are not provided for replay."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need basic tech knowledge to join Kube-Friday?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Most sessions start from basic introduction and are suitable for beginners."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- JSON-LD: Recurring Event for Kube-Friday -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "@id": "https://opentech-academy.com/#event-kube-friday",
+        "name": "Kube-Friday | Free Weekly Cloud & Kubernetes Session",
+        "description": "A casual, practical, zero-cost weekly sharing series covering Kubernetes, cloud-native, and DevOps concepts. Every Friday from 8:30 PM to 9:30 PM HKT.",
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "VirtualLocation",
+          "url": "https://opentech-academy.com/#kube-friday"
+        },
+        "organizer": { "@id": "https://opentech-academy.com/#organization" },
+        "inLanguage": ["en", "zh-Hant"],
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "HKD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://opentech-academy.com/#kube-friday",
+          "validFrom": "2026-01-01T00:00:00+08:00"
+        },
+        "startDate": "2026-10-02T20:30:00+08:00",
+        "endDate": "2027-12-31T21:30:00+08:00",
+        "schedule": {
+          "@type": "Schedule",
+          "repeatFrequency": "P1W",
+          "byDay": "https://schema.org/Friday",
+          "startTime": "20:30",
+          "endTime": "21:30",
+          "startDate": "2026-10-02",
+          "timezone": "Asia/Hong_Kong"
+        }
+      }
+    </script>
+
+    <!-- JSON-LD: BreadcrumbList for richer SERP breadcrumbs -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://opentech-academy.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Official Vendor Courses",
+            "item": "https://opentech-academy.com/#courses"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Kube-Friday",
+            "item": "https://opentech-academy.com/#kube-friday"
+          }
+        ]
+      }
+    </script>
+
+    <!-- JSON-LD: WebPage with primaryImageOfPage for richer results -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://opentech-academy.com/#webpage",
+        "url": "https://opentech-academy.com/",
+        "name": "TCC OpenTech Academy | Cloud & Kubernetes Training Hong Kong",
+        "description": "Official Red Hat & CNCF training, Kubernetes certification, and enterprise cloud upskilling in Hong Kong.",
+        "inLanguage": "zh-Hant",
+        "isPartOf": { "@id": "https://opentech-academy.com/#website" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://opentech-academy.com/Final%20Logo.png",
+          "width": 1200,
+          "height": 630
+        },
+        "datePublished": "2026-01-01T00:00:00+08:00",
+        "dateModified": "2026-08-31T00:00:00+08:00",
+        "significantLink": [
+          "https://opentech-academy.com/#courses",
+          "https://opentech-academy.com/#kube-friday",
+          "https://opentech-academy.com/#funding-guide"
+        ]
+      }
+    </script>
   </head>
   <body>
     <header class="site-header">
       <div class="container nav-wrap">
         <a href="#home" data-route="home" class="brand" aria-label="TCC OpenTech Academy home">
-          <span class="brand-mark"><img src="Final Logo.png" alt="TCC OpenTech Academy logo" /></span>
+          <span class="brand-mark"><img src="Final Logo.png" alt="TCC OpenTech Academy logo" width="44" height="44" decoding="async" /></span>
           <span class="brand-text" data-i18n="brand">OpenTech Academy</span>
         </a>
 
@@ -54,6 +388,7 @@
               <a href="#resources-events" data-route="resources-events" data-i18n="resourcesEvents">資源與活動</a>
               <a href="#kube-friday" data-route="kube-friday" data-i18n="kubeFridayLiveEvents">Kube-Friday 活動</a>
               <a href="#funding-guide" data-route="funding-guide" data-i18n="fundingGuideHub">資助指南</a>
+              <a href="#training-center" data-route="training-center" data-i18n="trainingCenter">荔枝角培訓中心</a>
             </div>
           </div>
           <a href="#about-us" data-route="about-us" data-i18n="aboutUs">關於我們</a>
@@ -67,7 +402,7 @@
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero" aria-label="Hero introduction">
         <div class="container hero-grid">
           <div class="hero-copy">
             <span class="eyebrow">政府資助培訓課程</span>
@@ -88,45 +423,47 @@
             </ul>
           </div>
 
-          <div class="hero-panel">
-            <div class="floating-card">
+          <aside class="hero-panel" aria-label="This week at TCC">
+            <div class="floating-card" itemscope itemtype="https://schema.org/Course">
               <p class="panel-label">本週於 TCC</p>
-              <h3>雲端原生基礎課程</h3>
+              <h3 itemprop="name">雲端原生基礎課程</h3>
               <ul>
                 <li>官方供應商對齊課程大綱</li>
                 <li>實作練習與從業者經驗分享</li>
                 <li>CEF 與 NITTP 資助指南</li>
               </ul>
               <div class="panel-meta">
-                <span>下一批開課：10 月 12 日</span>
+                <span>下一批開課：<time datetime="2026-10-12">10 月 12 日</time></span>
                 <span class="pill">名額有限</span>
               </div>
+              <meta itemprop="provider" content="TCC OpenTech Academy" />
+              <meta itemprop="inLanguage" content="zh-Hant" />
             </div>
-          </div>
+          </aside>
         </div>
       </section>
 
-      <section class="feature-band">
+      <section class="feature-band" aria-label="Why choose TCC OpenTech Academy">
         <div class="container feature-grid">
           <article>
-            <span class="feature-icon">✓</span>
+            <span class="feature-icon" aria-hidden="true">✓</span>
             <h3>官方授權資源</h3>
             <p>供應商認證課程，配合專業教學指導。</p>
           </article>
           <article>
-            <span class="feature-icon">$</span>
+            <span class="feature-icon" aria-hidden="true">$</span>
             <h3>雙重資助支持</h3>
             <p>個人 CEF 與企業 NITTP 資助規劃支持。</p>
           </article>
           <article>
-            <span class="feature-icon">⚡</span>
+            <span class="feature-icon" aria-hidden="true">⚡</span>
             <h3>實務導向學習</h3>
             <p>培養真實工作場景所需技能，而非單純理論。</p>
           </article>
         </div>
       </section>
 
-      <section class="section intro-section">
+      <section class="section intro-section" aria-label="Upcoming Kube-Friday free session">
         <div class="container section-head">
           <span class="eyebrow">即將舉行的 Kube-Friday</span>
           <h2>每週為好奇心與專業人士提供的免費技術分享</h2>
@@ -139,47 +476,53 @@
             </p>
             <a href="#kube-friday" data-route="kube-friday" class="btn btn-primary">立即預留免費席位</a>
           </div>
-          <div class="event-details">
-            <div><strong>時間</strong><span>每週五 • 晚上 8:30 – 9:30 HKT</span></div>
-            <div><strong>形式</strong><span>線上直播研討會</span></div>
-            <div><strong>適合對象</strong><span>初學者至從業者</span></div>
-          </div>
+          <dl class="event-details" aria-label="Event details">
+            <div><dt>時間</dt><dd>每週五 • 晚上 <time>20:30</time> – <time>21:30</time> HKT</dd></div>
+            <div><dt>形式</dt><dd>線上直播研討會</dd></div>
+            <div><dt>適合對象</dt><dd>初學者至從業者</dd></div>
+          </dl>
         </div>
       </section>
 
-      <section class="section alt-section">
+      <section class="section alt-section" aria-label="Core training categories">
         <div class="container">
           <div class="section-head">
             <span class="eyebrow">核心培訓類別</span>
             <h2>從入門到證照，提供全方位學習支援</h2>
           </div>
 
-          <div class="card-grid categories-grid">
-            <article class="info-card">
-              <h3>官方供應商課程</h3>
-              <p>授權 Red Hat 與 CNCF 課程，對齊國際認證標準。</p>
+          <div class="card-grid categories-grid" itemscope itemtype="https://schema.org/ItemList">
+            <meta itemprop="name" content="Core Training Categories" />
+            <article class="info-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <meta itemprop="position" content="1" />
+              <h3 itemprop="name">官方供應商課程</h3>
+              <p itemprop="description">授權 Red Hat 與 CNCF 課程，對齊國際認證標準。</p>
             </article>
-            <article class="info-card">
-              <h3>CEF 合資格課程</h3>
-              <p>100% 可申請退還，支援個人長期學習發展。</p>
+            <article class="info-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <meta itemprop="position" content="2" />
+              <h3 itemprop="name">CEF 合資格課程</h3>
+              <p itemprop="description">100% 可申請退還，支援個人長期學習發展。</p>
             </article>
-            <article class="info-card">
-              <h3>NITTP 企業培訓</h3>
-              <p>政府配對資助，協助企業降低培訓成本。</p>
+            <article class="info-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <meta itemprop="position" content="3" />
+              <h3 itemprop="name">NITTP 企業培訓</h3>
+              <p itemprop="description">政府配對資助，協助企業降低培訓成本。</p>
             </article>
-            <article class="info-card">
-              <h3>短期 1 日課程</h3>
-              <p>針對考試衝刺與快速技能提升的高效密集課程。</p>
+            <article class="info-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <meta itemprop="position" content="4" />
+              <h3 itemprop="name">短期 1 日課程</h3>
+              <p itemprop="description">針對考試衝刺與快速技能提升的高效密集課程。</p>
             </article>
-            <article class="info-card">
-              <h3>官方證照考試</h3>
-              <p>一站式考試安排、代金券支援與精簡化認證指導。</p>
+            <article class="info-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <meta itemprop="position" content="5" />
+              <h3 itemprop="name">官方證照考試</h3>
+              <p itemprop="description">一站式考試安排、代金券支援與精簡化認證指導。</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section funding-section">
+      <section class="section funding-section" aria-label="Government funding advantages">
         <div class="container funding-wrap">
           <div>
             <span class="eyebrow">政府資助優勢</span>
@@ -188,24 +531,24 @@
               作為香港 CEF 與 NITTP 的註冊培訓機構，我們協助每位學員與企業安心、正確地申請資助。
             </p>
           </div>
-          <div class="funding-list">
-            <div>
-              <strong>CEF</strong>
-              <span>個人終身學習資助</span>
+          <dl class="funding-list" aria-label="Funding programs">
+            <div itemscope itemtype="https://schema.org/FinancialProduct">
+              <dt itemprop="name">CEF</dt>
+              <dd itemprop="description">個人終身學習資助</dd>
+            </div>
+            <div itemscope itemtype="https://schema.org/FinancialProduct">
+              <dt itemprop="name">NITTP</dt>
+              <dd itemprop="description">企業年度培訓資助</dd>
             </div>
             <div>
-              <strong>NITTP</strong>
-              <span>企業年度培訓資助</span>
+              <dt>透明</dt>
+              <dd>從申請到報銷流程一目了然</dd>
             </div>
-            <div>
-              <strong>透明</strong>
-              <span>從申請到報銷流程一目了然</span>
-            </div>
-          </div>
+          </dl>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section" aria-label="Reasons to choose TCC OpenTech Academy">
         <div class="container">
           <div class="section-head">
             <span class="eyebrow">為什麼選擇 TCC OpenTech Academy？</span>
@@ -232,7 +575,7 @@
         </div>
       </section>
 
-      <section class="section cta-section" id="contact">
+      <section class="section cta-section" id="contact" aria-label="Get started call to action">
         <div class="container cta-banner">
           <div>
             <span class="eyebrow">準備開始了嗎？</span>
@@ -244,36 +587,57 @@
           </div>
         </div>
       </section>
+
+      <noscript>
+        <section class="section" aria-label="JavaScript required notice">
+          <div class="container">
+            <h2>JavaScript is required for full site navigation</h2>
+            <p>
+              TCC OpenTech Academy uses JavaScript for in-page routing between courses, programs, and resources.
+              The home page content above is fully readable without JavaScript. To browse individual courses,
+              please enable JavaScript or contact us directly at
+              <a href="mailto:info@opentech-academy.com">info@opentech-academy.com</a>.
+            </p>
+            <h3>Quick links</h3>
+            <ul>
+              <li><a href="mailto:info@opentech-academy.com">Email: info@opentech-academy.com</a></li>
+              <li><a href="tel:+85228702700">Phone: +852 2870 2700</a></li>
+              <li>Official Red Hat &amp; CNCF training, Kubernetes certification, and enterprise cloud upskilling in Hong Kong.</li>
+            </ul>
+          </div>
+        </section>
+      </noscript>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer" itemscope itemtype="https://schema.org/WPFooter">
       <div class="container footer-grid">
         <div>
-          <div class="brand footer-brand">
-            <span class="brand-mark"><img src="Final Logo.png" alt="TCC OpenTech Academy logo" /></span>
-            <span class="brand-text">OpenTech Academy</span>
+          <div class="brand footer-brand" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+            <span class="brand-mark"><img src="Final Logo.png" alt="TCC OpenTech Academy logo" itemprop="logo" width="44" height="44" decoding="async" /></span>
+            <span class="brand-text" itemprop="name">OpenTech Academy</span>
           </div>
           <p>Upskill smarter, learn faster, get certified with government subsidy support.</p>
         </div>
-        <div>
+        <nav aria-label="Footer quick links">
           <h4>Quick Links</h4>
           <ul>
             <li><a href="#courses" data-route="courses">Official Vendor Courses</a></li>
             <li><a href="#kube-friday" data-route="kube-friday">Kube-Friday</a></li>
             <li><a href="#funding-guide" data-route="funding-guide">Subsidy Eligibility</a></li>
+            <li><a href="#training-center" data-route="training-center">Lai Chi Kok Training Center</a></li>
           </ul>
-        </div>
-        <div>
+        </nav>
+        <address>
           <h4>Contact</h4>
           <ul>
             <li><a href="mailto:info@opentech-academy.com">info@opentech-academy.com</a></li>
             <li><a href="tel:+85228702700">+852 2870 2700</a></li>
           </ul>
-        </div>
+        </address>
       </div>
       <div class="container footer-bottom">
-        <span>© <span id="year"></span> TCC OpenTech Academy</span>
-        <span style="font-size: 60%;">( Member of <a href="https://www.tcc-consulting.com.hk" target="_blank">TCC Consulting</a> )</span>
+        <small>© <time id="year" datetime="2026">2026</time> TCC OpenTech Academy</small>
+        <small>( Member of <a href="https://www.tcc-consulting.com.hk" target="_blank" rel="noopener noreferrer">TCC Consulting</a> )</small>
       </div>
     </footer>
 

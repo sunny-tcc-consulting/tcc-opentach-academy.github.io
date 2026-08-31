@@ -32,6 +32,7 @@ const navText = {
     kubeFridayLiveEvents: "Kube-Friday 活動",
     fundingGuideHub: "資助指南",
     aboutUs: "關於我們",
+    trainingCenter: "荔枝角培訓中心",
     brand: "OpenTech Academy",
     checkSubsidy: "查詢資助資格",
     joinKubeFriday: "免費參加 Kube-Friday",
@@ -53,6 +54,7 @@ const navText = {
     kubeFridayLiveEvents: "Kube-Friday Live Events",
     fundingGuideHub: "Funding Guide Hub",
     aboutUs: "About Us",
+    trainingCenter: "Lai Chi Kok Training Center",
     brand: "OpenTech Academy",
     checkSubsidy: "Check Subsidy",
     joinKubeFriday: "Join Free Kube-Friday",
@@ -87,6 +89,142 @@ const currentSession = {
     pill: "Limited Seats",
     url: "https://forms.gle/TphxSqcE3Wnvwriv8"
   }
+};
+
+const trainingCenterContent = {
+  zh: {
+    eyebrow: "荔枝角培訓中心",
+    title: "我們的荔枝角培訓中心",
+    description: "位於荔枝角核心地段的專業培訓場地，鄰近港鐵站，配備現代化教學設施與實作環境，為個人學員與企業團隊提供理想的學習體驗。",
+    addressLabel: "地址",
+    address: "荔枝角（鄰近港鐵荔枝角站）",
+    transportLabel: "交通",
+    transport: "港鐵荔枝角站步行可達，多條巴士及小巴路線",
+    capacityLabel: "場地容量",
+    capacity: "可同時容納 20–30 名學員",
+    facilityLabel: "設施",
+    facility: "Wi-Fi、白板、投影設備、休息區",
+    gallery: {
+      eyebrow: "中心環境",
+      title: "場地照片",
+      note: "歡迎聯絡我們，洽談課室租賃安排！",
+      images: [
+        { file: "images/reception.png", caption: "接待區 / 大堂" },
+        { file: "images/classroom-A.png", caption: "培訓教室 A" },
+        { file: "images/classroom-B.png", caption: "培訓教室 B" },
+        { file: "images/pantry.png", caption: "休息與交流區" }
+      ]
+    },
+    visit: {
+      eyebrow: "預約參觀",
+      title: "想親身了解我們的培訓中心？",
+      text: "歡迎預約到訪參觀，我們的團隊會為您介紹場地、設施及培訓安排。",
+      cta: "聯絡我們"
+    }
+  },
+  en: {
+    eyebrow: "Lai Chi Kok Training Center",
+    title: "Our Lai Chi Kok Training Center",
+    description: "A professional training venue located in the heart of Lai Chi Kok, steps from the MTR station, equipped with modern teaching facilities and hands-on lab environments for individuals and enterprise teams.",
+    addressLabel: "Address",
+    address: "Lai Chi Kok (within walking distance of Lai Chi Kok MTR Station)",
+    transportLabel: "Transport",
+    transport: "Lai Chi Kok MTR Station; multiple bus and minibus routes",
+    capacityLabel: "Capacity",
+    capacity: "Accommodates 20-30 learners at the same time",
+    facilityLabel: "Facilities",
+    facility: "Wi-Fi, whiteboards, projectors, breakout areas",
+    gallery: {
+      eyebrow: "Inside the Center",
+      title: "Venue Gallery",
+      note: "Get in touch with us to arrange your classroom rental.",
+      images: [
+        { file: "images/reception.png", caption: "Reception / Lobby" },
+        { file: "images/classroom-A.png", caption: "Training Room A" },
+        { file: "images/classroom-B.png", caption: "Training Room B" },
+        { file: "images/pantry.png", caption: "Breakout & Lounge" }
+      ]
+    },
+    visit: {
+      eyebrow: "Book a Visit",
+      title: "Want to see the training center in person?",
+      text: "Schedule a visit and our team will walk you through the venue, facilities, and training arrangements.",
+      cta: "Contact Us"
+    }
+  }
+};
+
+const buildTrainingCenterPage = (lang) => {
+  const c = trainingCenterContent[lang];
+
+  const galleryItems = c.gallery.images
+    .map((img) => `
+      <figure class="training-center-tile">
+        <div class="training-center-image">
+          <img src="${img.file}" alt="${img.caption}" loading="lazy" />
+        </div>
+        <figcaption>${img.caption}</figcaption>
+      </figure>
+    `)
+    .join("");
+
+  const infoCards = [
+    { label: c.addressLabel, value: c.address },
+    { label: c.transportLabel, value: c.transport },
+    { label: c.capacityLabel, value: c.capacity },
+    { label: c.facilityLabel, value: c.facility }
+  ]
+    .map((item) => `<div class="mini-panel"><strong>${item.label}</strong><span>${item.value}</span></div>`)
+    .join("");
+
+  return `
+    <section class="page-hero small-hero">
+      <div class="container narrow-hero">
+        <span class="eyebrow">${c.eyebrow}</span>
+        <h1>${c.title}</h1>
+        <p>${c.description}</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container two-column">
+        <div>
+          <span class="eyebrow">${lang === "zh" ? "場地資訊" : "Venue Info"}</span>
+          <h2>${lang === "zh" ? "完善的設施與便利的位置" : "Complete facilities, convenient location"}</h2>
+          <p>${lang === "zh"
+            ? "我們的荔枝角培訓中心為 Red Hat、CNCF 與企業培訓量身打造，結合教學、實作與小組討論空間。"
+            : "Our Lai Chi Kok training center is purpose-built for Red Hat, CNCF, and enterprise training — combining teaching, hands-on practice, and group discussion spaces."}</p>
+        </div>
+        <div class="info-stack">${infoCards}</div>
+      </div>
+    </section>
+
+    <section class="section alt-section" id="training-center-gallery">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">${c.gallery.eyebrow}</span>
+          <h2>${c.gallery.title}</h2>
+          <p class="gallery-note">${c.gallery.note}</p>
+        </div>
+        <div class="training-center-gallery">
+          ${galleryItems}
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section" id="training-center-visit">
+      <div class="container cta-banner">
+        <div>
+          <span class="eyebrow">${c.visit.eyebrow}</span>
+          <h2>${c.visit.title}</h2>
+          <p>${c.visit.text}</p>
+        </div>
+        <div class="cta-actions">
+          <a href="#contact" class="btn btn-primary">${c.visit.cta}</a>
+        </div>
+      </div>
+    </section>
+  `;
 };
 
 const buildHomePage = (lang) => {
@@ -145,6 +283,10 @@ const buildHomePage = (lang) => {
     why3Text: "聚焦真實職場應用，而非抽象理論本身。",
     why4: "全流程支援",
     why4Text: "從學習、複習、考試認證到團隊規劃，一站式支援。",
+    centerEyebrow: "荔枝角培訓中心",
+    centerTitle: "位於荔枝角的專業培訓場地",
+    centerText: "鄰近港鐵站，配備現代化教學設施與實作環境，為學員提供理想的學習體驗。",
+    centerCta: "參觀培訓中心",
     ready: "準備開始了嗎？",
     readyTitle: "找到適合你的課程，立即開始學習。",
     explore: "探索課程",
@@ -203,6 +345,10 @@ const buildHomePage = (lang) => {
     why3Text: "Focused on real workplace application rather than abstract theory.",
     why4: "Full Lifecycle Support",
     why4Text: "Learning, revision, exam certification, and team planning in one journey.",
+    centerEyebrow: "Lai Chi Kok Training Center",
+    centerTitle: "A professional venue in Lai Chi Kok",
+    centerText: "Steps from the MTR with modern teaching facilities and a hands-on lab, designed for an effective learning experience.",
+    centerCta: "Tour the Training Center",
     ready: "Ready to start?",
     readyTitle: "Find the right course and start learning today.",
     explore: "Explore Courses",
@@ -324,6 +470,31 @@ const buildHomePage = (lang) => {
           <article class="quote-card"><h3>${text.why2}</h3><p>${text.why2Text}</p></article>
           <article class="quote-card"><h3>${text.why3}</h3><p>${text.why3Text}</p></article>
           <article class="quote-card"><h3>${text.why4}</h3><p>${text.why4Text}</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt-section" id="training-center-preview">
+      <div class="container funding-wrap">
+        <div>
+          <span class="eyebrow">${text.centerEyebrow}</span>
+          <h2>${text.centerTitle}</h2>
+          <p>${text.centerText}</p>
+          <a href="#training-center" data-route="training-center" class="btn btn-secondary">${text.centerCta}</a>
+        </div>
+        <div class="training-center-preview-grid">
+          <figure class="training-center-tile">
+            <div class="training-center-image">
+              <img src="images/reception.png" alt="${isZh ? "培訓中心接待區" : "Training Center Reception"}" loading="lazy" />
+            </div>
+            <figcaption>${isZh ? "接待區" : "Reception"}</figcaption>
+          </figure>
+          <figure class="training-center-tile">
+            <div class="training-center-image">
+              <img src="images/classroom-A.png" alt="${isZh ? "培訓教室" : "Training Room"}" loading="lazy" />
+            </div>
+            <figcaption>${isZh ? "培訓教室" : "Training Room"}</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -629,6 +800,7 @@ const pageTemplates = {
       highlightsTitle: "本頁內容"
     }),
     "kube-friday": buildKubeFridayPage("zh"),
+    "training-center": buildTrainingCenterPage("zh"),
   },
   en: {
     home: buildHomePage("en"),
@@ -716,6 +888,7 @@ const pageTemplates = {
       highlightsTitle: "What this page covers"
     }),
     "kube-friday": buildKubeFridayPage("en"),
+    "training-center": buildTrainingCenterPage("en"),
   }
 };
 
@@ -727,6 +900,8 @@ function renderRoute(route, lang = appState.language) {
   if (!template) return;
 
   main.innerHTML = template;
+
+  updateRouteMeta(route, lang);
 
   const faqItems = document.querySelectorAll(".faq-item");
   faqItems.forEach((item) => {
@@ -741,6 +916,145 @@ function renderRoute(route, lang = appState.language) {
       }
     });
   });
+}
+
+const routeMeta = {
+  zh: {
+    home: {
+      title: "TCC OpenTech Academy | 雲端與 Kubernetes 專業培訓",
+      description: "提供 Red Hat 與 CNCF 官方認證培訓、Kubernetes 認證課程、企業雲端培訓及每週免費 Kube-Friday 技術分享。"
+    },
+    courses: {
+      title: "官方認證課程 | TCC OpenTech Academy",
+      description: "探索經授權的 Red Hat 與 CNCF 培訓課程，對齊國際認證標準。"
+    },
+    "courses-short": {
+      title: "短期速成課程 | TCC OpenTech Academy",
+      description: "高效密集課程，快速累積技能與考試準備能力。"
+    },
+    "courses-cef": {
+      title: "CEF 資助課程 | TCC OpenTech Academy",
+      description: "適合個人進修的資助型課程路線。"
+    },
+    "courses-exams": {
+      title: "證照考試 | TCC OpenTech Academy",
+      description: "考試準備支援與官方認證指導。"
+    },
+    "enterprise-training": {
+      title: "NITTP 企業培訓 | TCC OpenTech Academy",
+      description: "適合團隊的企業雲端能力培訓方案。"
+    },
+    "enterprise-custom": {
+      title: "企業客製培訓 | TCC OpenTech Academy",
+      description: "依照公司實際營運環境設計的專屬培訓方案。"
+    },
+    "kube-friday": {
+      title: "Kube-Friday 每週免費雲端與 Kubernetes 分享活動 | TCC OpenTech Academy",
+      description: "每週五晚上 8:30–9:30 HKT 的免費 Kubernetes、雲端原生與 DevOps 線上直播。"
+    },
+    "resources-events": {
+      title: "資源與活動 | TCC OpenTech Academy",
+      description: "實時學習、分享活動與雲端原生實務指導。"
+    },
+    "funding-guide": {
+      title: "資助指南中心 | TCC OpenTech Academy",
+      description: "為學員與企業提供 CEF、NITTP 資助申請指引。"
+    },
+    "about-us": {
+      title: "關於我們 | TCC OpenTech Academy",
+      description: "一所以技能、證照與實務準備為核心的培訓機構。"
+    },
+    "training-center": {
+      title: "荔枝角培訓中心 | TCC OpenTech Academy",
+      description: "位於荔枝角專業培訓場地，配備現代化教學設施與實作環境。"
+    }
+  },
+  en: {
+    home: {
+      title: "TCC OpenTech Academy | Cloud & Kubernetes Training Hong Kong",
+      description: "Official Red Hat & CNCF training, Kubernetes certification, and enterprise cloud upskilling in Hong Kong."
+    },
+    courses: {
+      title: "Official Vendor Courses | TCC OpenTech Academy",
+      description: "Explore authorized Red Hat & CNCF training programs aligned to international certification standards."
+    },
+    "courses-short": {
+      title: "Short Crash Courses | TCC OpenTech Academy",
+      description: "High-impact intensive courses for fast learning and exam sprinting."
+    },
+    "courses-cef": {
+      title: "CEF Subsidy Courses | TCC OpenTech Academy",
+      description: "Eligible learning paths with strong personal subsidy support."
+    },
+    "courses-exams": {
+      title: "Certificate Exams | TCC OpenTech Academy",
+      description: "Exam preparation support and official certification guidance."
+    },
+    "enterprise-training": {
+      title: "NITTP Enterprise Training | TCC OpenTech Academy",
+      description: "Corporate-ready cloud capability programs for teams."
+    },
+    "enterprise-custom": {
+      title: "Corporate Custom Training | TCC OpenTech Academy",
+      description: "Tailored training for your company's real operating environment."
+    },
+    "kube-friday": {
+      title: "Kube-Friday | Free Weekly Cloud & Kubernetes Session | TCC OpenTech Academy",
+      description: "Free weekly live webinar every Friday 8:30–9:30 PM HKT covering Kubernetes, cloud-native, and DevOps."
+    },
+    "resources-events": {
+      title: "Resources & Events | TCC OpenTech Academy",
+      description: "Live learning, sharing events, and practical cloud-native guidance."
+    },
+    "funding-guide": {
+      title: "Funding Guide Hub | TCC OpenTech Academy",
+      description: "Subsidy guidance for CEF, NITTP, learners and enterprises."
+    },
+    "about-us": {
+      title: "About Us | TCC OpenTech Academy",
+      description: "A practical academy focused on skills, certification, and real-world readiness."
+    },
+    "training-center": {
+      title: "Lai Chi Kok Training Center | TCC OpenTech Academy",
+      description: "Professional training venue in Lai Chi Kok with modern teaching facilities and hands-on lab environments."
+    }
+  }
+};
+
+function updateRouteMeta(route, lang = appState.language) {
+  const meta = routeMeta[lang]?.[route];
+  if (!meta) return;
+
+  document.title = meta.title;
+
+  const setMeta = (selector, attr, value) => {
+    const el = document.querySelector(selector);
+    if (el) el.setAttribute(attr, value);
+  };
+
+  setMeta('meta[name="description"]', "content", meta.description);
+
+  const baseUrl = window.location.origin + window.location.pathname;
+  const fullUrl = `${baseUrl}#${route}`;
+
+  setMeta('meta[property="og:title"]', "content", meta.title);
+  setMeta('meta[property="og:description"]', "content", meta.description);
+  setMeta('meta[property="og:url"]', "content", fullUrl);
+  setMeta('meta[property="og:locale"]', "content", lang === "zh" ? "zh_HK" : "en_HK");
+
+  setMeta('meta[name="twitter:title"]', "content", meta.title);
+  setMeta('meta[name="twitter:description"]', "content", meta.description);
+  setMeta('meta[name="twitter:url"]', "content", fullUrl);
+
+  const canonical = document.querySelector('link[rel="canonical"]');
+  if (canonical) canonical.setAttribute("href", fullUrl);
+
+  const enAlternate = document.querySelector('link[rel="alternate"][hreflang="en"]');
+  const zhAlternate = document.querySelector('link[rel="alternate"][hreflang="zh-Hant"]');
+  const xDefault = document.querySelector('link[rel="alternate"][hreflang="x-default"]');
+  if (enAlternate) enAlternate.setAttribute("href", `${baseUrl}#${route}?lang=en`);
+  if (zhAlternate) zhAlternate.setAttribute("href", `${baseUrl}#${route}?lang=zh`);
+  if (xDefault) xDefault.setAttribute("href", fullUrl);
 }
 
 function updateActiveRoute(route) {
@@ -767,6 +1081,7 @@ function updateStaticLanguage(lang) {
     "[data-i18n='kubeFridayLiveEvents']": labels.kubeFridayLiveEvents,
     "[data-i18n='fundingGuideHub']": labels.fundingGuideHub,
     "[data-i18n='aboutUs']": labels.aboutUs,
+    "[data-i18n='trainingCenter']": labels.trainingCenter,
     "[data-i18n='brand']": labels.brand,
     "[data-i18n='checkSubsidy']": labels.checkSubsidy,
     "[data-i18n='joinKubeFriday']": labels.joinKubeFriday,
@@ -794,7 +1109,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const navToggle = document.querySelector(".nav-toggle");
   const header = document.querySelector(".site-header");
   const yearNode = document.querySelector("#year");
-  const langToggle = document.querySelector(".lang-switch");
 
   if (yearNode) {
     yearNode.textContent = new Date().getFullYear();
@@ -816,6 +1130,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const langToggle = document.querySelector(".lang-switch");
   if (langToggle) {
     langToggle.addEventListener("click", () => {
       appState.language = appState.language === "zh" ? "en" : "zh";
